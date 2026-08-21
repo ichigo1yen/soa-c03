@@ -1,8 +1,7 @@
-# 学習クイズサイト（静的サイト / S3 + CloudFront 想定）
+# 学習クイズサイト（静的サイト）
 
 4〜6択の単一・複数選択問題を、問題データ（JSON）とサイト本体（HTML/CSS/JS）を分離した形で
 出題する学習サイトです。サーバーサイド処理は一切なく、**静的ファイルのみ**で完結するため、
-S3 + CloudFront にそのままアップロードして公開できます。
 
 ## 特徴
 
@@ -113,21 +112,6 @@ python3 -m http.server 8000
 # ブラウザで http://localhost:8000/index.html を開く
 ```
 
-## AWS（S3 + CloudFront）への公開手順の概要
-
-1. `quiz-site/` フォルダの中身一式（`index.html`, `quiz.html`, `assets/`, `data/`）を
-   S3 バケットにアップロードします（`tools/` や `sources/`（変換元HTML）は公開不要）。
-   ```bash
-   aws s3 sync . s3://<バケット名>/ --exclude "tools/*" --exclude "sources/*"
-   ```
-2. S3 は「静的ウェブサイトホスティング」を有効にするか、CloudFront から
-   OAC（Origin Access Control）経由でアクセスする構成のどちらでも動作します
-   （このサイトはルーティング不要な単純な静的サイトのため、特別な設定は不要です）。
-3. CloudFront のデフォルトルートオブジェクトを `index.html` に設定してください。
-4. `index.html` / `quiz.html` は `Cache-Control` を短め、または更新の都度
-   CloudFront のキャッシュ無効化（invalidation）を行うと、問題データ更新時に反映されやすくなります。
-5. HTTPS化・独自ドメインは CloudFront のディストリビューション設定・ACM証明書で行ってください
-   （このサイト自体にはドメイン依存のコードはありません）。
 
 ## 補足・カスタマイズしやすいポイント
 
