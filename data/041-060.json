@@ -1,0 +1,545 @@
+{
+  "title": "問題 041-060",
+  "questions": [
+    {
+      "id": "041",
+      "text": "CloudOpsエンジニアが、Auto Scalingグループ内のAmazon EC2インスタンスにアプリケーションをデプロイしようとしています。アプリケーションには依存関係のインストールが必要です。アプリケーションの更新は毎週行われます。\nCloudOpsエンジニアは、定期的にアプリケーションの更新を組み込むソリューションを実装する必要があります。また、そのソリューションではAmazon Machine Image（AMI）の作成中に脆弱性スキャンも実行する必要があります。\nこれらの要件を満たす、最も運用効率の高いソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Packerを使用するスクリプトを作成し、cronジョブでスクリプトを実行するようスケジュールする。"
+        },
+        {
+          "letter": "B",
+          "text": "EC2インスタンスにアプリケーションとその依存関係をインストールし、そのEC2インスタンスのAMIを作成する。"
+        },
+        {
+          "letter": "C",
+          "text": "EC2 Image Builderをカスタムレシピとともに使用して、アプリケーションとその依存関係をインストールする。"
+        },
+        {
+          "letter": "D",
+          "text": "Amazon EventBridgeのスケジュールされたルールを使用してEC2 CreateImage API操作を呼び出す。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "042",
+      "text": "企業は、複数のアベイラビリティーゾーンに分散したAmazon EC2インスタンス群でアプリケーションをホストすることを計画しています。アプリケーションは毎秒数百万件のリクエストまでスケールできる必要があります。\nCloudOpsエンジニアは、EC2インスタンスへトラフィックを分散するソリューションを設計する必要があります。このソリューションは、突然かつ変動の大きいトラフィックパターンに対応できるよう最適化され、各アベイラビリティーゾーンにつき1つの静的IPアドレスを使用する必要があります。\nこれらの要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Amazon Simple Queue Service（Amazon SQS）キュー"
+        },
+        {
+          "letter": "B",
+          "text": "Application Load Balancer"
+        },
+        {
+          "letter": "C",
+          "text": "AWS Global Accelerator"
+        },
+        {
+          "letter": "D",
+          "text": "Network Load Balancer"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "043",
+      "text": "企業には、Auto Scalingグループ内のAmazon EC2インスタンスでホストされているステートフルなWebアプリケーションがあります。インスタンスは、単一のターゲットグループを持つApplication Load Balancer（ALB）の背後で稼働しています。ALBはAmazon CloudFrontディストリビューションのオリジンとして設定されています。ユーザーからWebアプリケーションがランダムにログアウトされるという報告があります。\nこの問題を解決するために、CloudOpsエンジニアはどのアクションの組み合わせを実行すべきですか？（2つ選択）",
+      "type": "multiple",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "ALBターゲットグループのアルゴリズムをleast outstanding requestsに変更する。"
+        },
+        {
+          "letter": "B",
+          "text": "CloudFrontディストリビューションのキャッシュ動作でCookie転送を設定する。"
+        },
+        {
+          "letter": "C",
+          "text": "CloudFrontディストリビューションのキャッシュ動作でヘッダー転送を設定する。"
+        },
+        {
+          "letter": "D",
+          "text": "ALBリスナールールでグループレベルのスティッキネスを有効にする。"
+        },
+        {
+          "letter": "E",
+          "text": "ALBターゲットグループでスティッキーセッションを有効にする。"
+        }
+      ],
+      "correct": [
+        "B",
+        "E"
+      ]
+    },
+    {
+      "id": "044",
+      "text": "グローバル企業がAWS Organizationsの組織を使用して複数のAWSアカウントを管理しています。規制に準拠するため、企業は5つのAWSリージョンにワークロード環境をデプロイしています。リージョンごとに個別のAWSアカウントがあります。\n企業は、各環境のVPCを、ディレクトリとして機能する中央の共有VPCと、共有監視VPCに接続する必要があります。共有アカウントはそれぞれ別のAWSアカウントにあります。\nこれらの要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "中央の共有AWSアカウントにトランジットゲートウェイを作成する。トランジットゲートウェイを企業のAWSアカウントと共有し、すべてのVPCを中央のトランジットゲートウェイに接続する。"
+        },
+        {
+          "letter": "B",
+          "text": "企業がリソースをデプロイしている各リージョンに個別のトランジットゲートウェイを作成する。トランジットゲートウェイを企業のAWSアカウントと共有し、各リージョンのVPCを同じリージョンのトランジットゲートウェイに接続する。トランジットゲートウェイ同士をピアリングし、すべてのルートテーブルに適切なルートを作成する。"
+        },
+        {
+          "letter": "C",
+          "text": "共有VPC用の仮想プライベートゲートウェイを作成する。ワークロードVPC用のカスタマーゲートウェイを作成する。ディレクトリVPC、監視VPC、および各ワークロードVPC間にAWS Site-to-Site VPN接続を設定する。"
+        },
+        {
+          "letter": "D",
+          "text": "中央の共有VPC、共有監視VPC、および各ワークロードVPC間にVPCピアリング接続を作成する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "045",
+      "text": "企業はAmazon RDS for PostgreSQLデータベースに重要な情報を保存しています。ピークのショッピング時間帯に、パフォーマンス低下、高いCPU使用率、クエリレイテンシーの増加、接続タイムアウトが発生しています。また、ピーク時間帯にはユーザー接続が急増し、その急増がデータベースの読み取りパフォーマンスに影響しています。\n企業はデータベースのパフォーマンス問題を解決したいと考えています。\nこの要件を満たす手順の組み合わせはどれですか？（2つ選択）",
+      "type": "multiple",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Amazon RDS Performance Insightsを使用して、データベースパフォーマンスに最も影響するSQLクエリを分析し、分析結果に基づいてSQLクエリを更新する。"
+        },
+        {
+          "letter": "B",
+          "text": "Amazon CloudWatch Logs Insightsを使用してデータベースクエリを分析し、パフォーマンスのボトルネックを特定する。分析結果に基づいてクエリを更新する。"
+        },
+        {
+          "letter": "C",
+          "text": "Amazon RDS for PostgreSQLを単一のアベイラビリティーゾーンで使用する。"
+        },
+        {
+          "letter": "D",
+          "text": "接続プールを完全に無効にし、ピーク時間帯でもすべてのユーザー接続を同等に扱う。"
+        },
+        {
+          "letter": "E",
+          "text": "接続プールを備えたRDS Proxyを実装する。"
+        }
+      ],
+      "correct": [
+        "A",
+        "E"
+      ]
+    },
+    {
+      "id": "046",
+      "text": "企業はApplication Load Balancer（ALB）の背後にある3台のAmazon EC2インスタンスでWebアプリケーションを実行しています。ランダムに発生するトラフィック増加によって、アプリケーションのパフォーマンスが低下することがあります。CloudOpsエンジニアは、増加したトラフィックに対応できるようアプリケーションをスケールする必要があります。\nこれらの要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "アプリケーションのレイテンシーを監視するAmazon CloudWatchアラームを作成し、指定したしきい値に達した場合に各EC2インスタンスのサイズを増やす。"
+        },
+        {
+          "letter": "B",
+          "text": "アプリケーションのレイテンシーを監視するAmazon EventBridgeルールを作成し、指定したしきい値に達した場合にALBへEC2インスタンスを追加する。"
+        },
+        {
+          "letter": "C",
+          "text": "ターゲット追跡スケーリングポリシーを設定したEC2インスタンスのAuto Scalingグループにアプリケーションをデプロイし、ALBをAuto Scalingグループに関連付ける。"
+        },
+        {
+          "letter": "D",
+          "text": "スケジュールされたスケーリングポリシーを設定したEC2インスタンスのAuto Scalingグループにアプリケーションをデプロイし、ALBをAuto Scalingグループに関連付ける。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "047",
+      "text": "以前は15分で完了していた企業のレポートジョブが、現在では1時間かかるようになっています。アプリケーションがレポートを生成し、そのアプリケーションはAmazon EC2インスタンス上で動作し、Amazon RDS for MySQLデータベースからデータを抽出しています。\nCloudOpsエンジニアがRDSインスタンスのAmazon CloudWatchダッシュボードを確認すると、レポートを実行していないときでもRead IOPSメトリクスが高いことが分かりました。CloudOpsエンジニアはRDSインスタンスのパフォーマンスと可用性を改善する必要があります。\nこれらの要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "RDSインスタンスの前段にAmazon ElastiCacheクラスターを設定し、レポートジョブがElastiCacheクラスターをクエリするよう更新する。"
+        },
+        {
+          "letter": "B",
+          "text": "RDSリードレプリカをデプロイし、レポートジョブがリーダーエンドポイントをクエリするよう更新する。"
+        },
+        {
+          "letter": "C",
+          "text": "Amazon CloudFrontディストリビューションを作成し、RDSインスタンスをオリジンとして設定する。レポートジョブがCloudFrontディストリビューションをクエリするよう更新する。"
+        },
+        {
+          "letter": "D",
+          "text": "RDSインスタンスのサイズを増やす。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "048",
+      "text": "AWS上で複数のワークロードを実行している企業が、DNSベースの脅威対策を実装してセキュリティ体制を強化したいと考えています。企業はDNSベースの攻撃をブロックする必要があります。\nこの要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "AWS Shield Advancedをデプロイして悪意のあるDNSクエリをフィルタリングおよびブロックし、ドメインフィルタリングポリシーを設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "AWS WAFを使用してDNSトラフィックを検査し、悪意のあるドメインを検出する。既知の脅威をブロックするカスタムルールを作成する。"
+        },
+        {
+          "letter": "C",
+          "text": "Amazon Route 53 Resolverを設定してDNSクエリをRoute 53 Resolver DNS Firewall Advancedへ転送し、脅威を検出・フィルタリングする。"
+        },
+        {
+          "letter": "D",
+          "text": "AWS Configを設定してDNSクエリとDNSトラフィックパターンを監視し、AWS Lambda関数を使用して悪意のあるドメインへのアクセスを防止する。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "049",
+      "text": "CloudOpsエンジニアは、本番データベースのコピーを移行アカウントと共有したいと考えています。本番データベースはAmazon RDS DBインスタンスでホストされ、production-rds-keyというエイリアスを持つAWS Key Management Service（AWS KMS）キーで保管時に暗号化されています。\n管理上のオーバーヘッドを最小限にして要件を満たすには、CloudOpsエンジニアは何をすべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "本番アカウントでRDS DBインスタンスのスナップショットを取得する。production-rds-key KMSキーのキーポリシーを変更して移行アカウントのルートユーザーにアクセス権を付与し、スナップショットを移行アカウントと共有する。"
+        },
+        {
+          "letter": "B",
+          "text": "移行アカウントにRDSリードレプリカを作成し、production-rds-key KMSキーを移行アカウントへレプリケートするようKMSキーポリシーを設定する。"
+        },
+        {
+          "letter": "C",
+          "text": "本番アカウントでRDS DBインスタンスのスナップショットを取得し、移行アカウントと共有する。移行アカウントで同じエイリアスを持つ新しいKMSキーを作成する。"
+        },
+        {
+          "letter": "D",
+          "text": "ネイティブデータベースツールを使用してRDS DBインスタンスをAmazon S3へエクスポートする。S3バケットと、本番アカウントと移行アカウント間のクロスアカウントアクセス用S3バケットポリシーを作成する。ネイティブデータベースツールを使用してS3から新しいRDS DBインスタンスへデータベースをインポートする。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "050",
+      "text": "企業には、複数のAWS Lambda関数を使用する重要なサーバーレスアプリケーションがあります。各Lambda関数は毎日1 GBのログデータを生成し、それぞれ独自のAmazon CloudWatch Logsロググループに保存します。企業のセキュリティチームは、すべてのロググループにわたってアプリケーションエラーを種類別に集計した件数を求めています。\nこの要件を満たすために、CloudOpsエンジニアは何をすべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "statsコマンドとcount関数を使用するCloudWatch Logs Insightsクエリを実行する。"
+        },
+        {
+          "letter": "B",
+          "text": "groupbyキーワードとcount関数を使用するCloudWatch Logs検索を実行する。"
+        },
+        {
+          "letter": "C",
+          "text": "SELECTおよびGROUP BVキーワードを使用するAmazon Athenaクエリを実行する。"
+        },
+        {
+          "letter": "D",
+          "text": "SELECTおよびGROUP BYキーワードを使用するAmazon RDSクエリを実行する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "051",
+      "text": "開発者がAmazon LinuxのAmazon Machine Image（AMI）を使用して、サードパーティアプリケーションをホストするEC2インスタンスを起動しています。アプリケーションが断続的に不安定になります。CloudOpsエンジニアは、15分間使用率が90%を超えた場合にEC2インスタンスを自動的に再起動し、開発者に再起動を通知するソリューションを必要としています。\n管理作業を最小限にしてこれらの要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "インスタンスのCPU使用率を評価するAmazon CloudWatchアラームを設定する。アラーム発生時にAWS Lambda関数を呼び出してAmazon Simple Notification Service（Amazon SNS）トピックへメッセージを発行するよう設定し、Lambda関数でEC2インスタンスを再起動する。開発者をSNSトピックにサブスクライブする。"
+        },
+        {
+          "letter": "B",
+          "text": "インスタンスのCPU使用率を評価するAmazon CloudWatchアラームを作成する。アラームがAmazon Simple Notification Service（Amazon SNS）トピックへ通知を発行するとともに、EC2アクションでインスタンスを再起動するよう設定する。開発者をSNSトピックにサブスクライブする。"
+        },
+        {
+          "letter": "C",
+          "text": "インスタンスのCPU使用率を評価するAmazon CloudWatchアラームを作成する。アラームがAWS Systems Managerアクションを呼び出してインシデントを作成し、開発者へ通知して再起動を依頼するよう設定する。"
+        },
+        {
+          "letter": "D",
+          "text": "Amazon Simple Notification Service（Amazon SNS）トピックへメッセージを発行し、EC2インスタンスを再起動するAWS Systems Managerランブックを作成する。開発者をSNSトピックにサブスクライブする。インスタンスのCPU使用率が15分を超えて90%以上になった場合にSystems Managerランブックを実行するようAmazon CloudWatchアラームを設定する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "052",
+      "text": "企業には、Application Load Balancer（ALB）の背後で動作するAmazon EC2インスタンス群上のマイクロサービスがあります。\nCloudOpsエンジニアは、Amazon Route 53を使用してALBのURLをexample.comにマッピングするレコードを作成する必要があります。\nこの要件を満たすレコードタイプはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Aレコード"
+        },
+        {
+          "letter": "B",
+          "text": "AAAAレコード"
+        },
+        {
+          "letter": "C",
+          "text": "エイリアスレコード"
+        },
+        {
+          "letter": "D",
+          "text": "CNAMEレコード"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "053",
+      "text": "アプリケーションがApplication Load Balancer（ALB）の背後にあるAmazon EC2インスタンス上で動作しています。アプリケーションは起動後、ローカルキャッシュの生成に最大2分かかります。起動後数秒でターゲットグループのヘルスチェックでは正常と報告されます。\nCloudOpsエンジニアは、一部のインスタンスを再起動すると、各インスタンスが正常と報告した直後から、インスタンスが均等にトラフィックを受信することを確認しました。アプリケーションキャッシュが生成される間、アプリケーションが徐々に増加する割合でトラフィックを受信する必要があります。\nこの要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "ターゲットグループ属性のslow_start.duration_secondsを120秒に変更する。インスタンスを再起動する前にターゲットグループから登録解除し、再起動後にターゲットグループへ登録する。"
+        },
+        {
+          "letter": "B",
+          "text": "ターゲットグループのHealthCheckTimeoutSecondsパラメータを120秒に変更する。インスタンスを再起動する前にターゲットグループから登録解除し、再起動後にターゲットグループへ登録する。"
+        },
+        {
+          "letter": "C",
+          "text": "ヘルスチェック状態を監視するAmazon CloudWatchアラームを設定し、ヘルスチェック失敗時にEC2インスタンスを再起動するよう設定する。loadbalancing.algorithm.typeターゲットグループ属性をweighted_randomに変更する。"
+        },
+        {
+          "letter": "D",
+          "text": "Amazon EC2 Auto Scalingグループを作成し、既存のEC2インスタンスをAuto Scalingグループに追加する。EC2 Auto Scalingライフサイクルフックを設定して起動中のインスタンスをPending Wait状態に移行し、ローカルキャッシュの生成完了時にライフサイクルフックを完了するようアプリケーションを更新する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "054",
+      "text": "企業はAmazon EC2インスタンス上でアプリケーションを実行しています。アプリケーションはAmazon Aurora PostgreSQLデータベースからデータを保存・取得します。開発者が誤ってデータベースからテーブルを削除し、アプリケーションエラーが発生しました。2時間後、CloudOpsエンジニアはデータを復旧してアプリケーションを再び機能させる必要があります。\nこの要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Aurora Backtrack機能を使用して、データベースを2時間前の指定時点まで巻き戻す。"
+        },
+        {
+          "letter": "B",
+          "text": "既存のデータベースに対してポイントインタイムリカバリを実行し、2時間前の指定時点にデータベースを復元する。"
+        },
+        {
+          "letter": "C",
+          "text": "ポイントインタイムリカバリを実行して新しいデータベースを作成し、2時間前の指定時点にデータベースを復元する。アプリケーションを新しいデータベースエンドポイントを使用するよう再構成する。"
+        },
+        {
+          "letter": "D",
+          "text": "新しいAuroraクラスターを作成し、Restore data from S3 bucketオプションを選択して、障害発生時点の2時間前までのログファイルを選択する。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "055",
+      "text": "企業はAWS上で複数のワークロードを実行しています。企業は特定のAWSリージョンで監視する必要があるAWS Trusted Advisorのサービスクォータメトリクスを5つ特定しています。リソース使用量がいずれかのサービスクォータの60%を超えるたびに、メール通知を受け取りたいと考えています。\nこれらの要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Trusted Advisorのサービスクォータメトリクスごとに1つ、合計5つのAmazon CloudWatchアラームを作成する。いずれかのサービスクォータの使用量が60%を超えるたびにメール通知するようAmazon Simple Notification Service（Amazon SNS）トピックを設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "Trusted Advisorのサービスクォータメトリクスごとに1つ、合計5つのAmazon CloudWatchアラームを作成する。いずれかのサービスクォータの使用量が60%を超えるたびにメール通知するようAmazon Simple Queue Service（Amazon SQS）キューを設定する。"
+        },
+        {
+          "letter": "C",
+          "text": "AWS Health Dashboardを使用して各Trusted Advisorサービスクォータメトリクスを監視し、使用量が60%を超えるたびにメール通知するようAmazon Simple Queue Service（Amazon SQS）キューを設定する。"
+        },
+        {
+          "letter": "D",
+          "text": "AWS Health Dashboardを使用して各Trusted Advisorサービスクォータメトリクスを監視し、使用量が60%を超えるたびにメール通知するようAmazon Simple Notification Service（Amazon SNS）トピックを設定する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "056",
+      "text": "CloudOpsエンジニアがAmazon CloudWatch Syntheticsの実装をトラブルシューティングしています。CloudWatch Syntheticsの結果はAmazon S3バケットに送信する必要があります。\nCloudOpsエンジニアは、インターネットゲートウェイが接続されたVPC上で実行される既存のカナリアの設定をコピーしました。しかし、インターネットアクセスのないプライベートVPC上でカナリアを正常に起動できません。\nプライベートVPC上でカナリアを正常に実行するには、CloudOpsエンジニアは何をすべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "VPCでDNS解決オプションとDNSホスト名オプションが有効になっていることを確認する。VPCにsynthetics:GetCanaryRuns権限を追加する。S3バケットでCloudWatch SyntheticsロールにIgnorePublicAcls権限を追加する。"
+        },
+        {
+          "letter": "B",
+          "text": "VPCでDNS解決オプションとDNSホスト名オプションが無効になっていることを確認する。Amazon S3用のゲートウェイVPCエンドポイントを作成し、CloudWatch SyntheticsがS3エンドポイントを使用できる権限を追加する。"
+        },
+        {
+          "letter": "C",
+          "text": "VPCでDNS解決オプションとDNSホスト名オプションが無効になっていることを確認する。カナリアにセキュリティグループを追加してDNSポートのアウトバウンドトラフィックを許可し、CloudWatch SyntheticsがS3バケットへ書き込める権限を追加する。"
+        },
+        {
+          "letter": "D",
+          "text": "VPCでDNS解決オプションとDNSホスト名オプションが有効になっていることを確認する。CloudWatch用のインターフェイスVPCエンドポイントとAmazon S3用のゲートウェイVPCエンドポイントを作成し、CloudWatch Syntheticsが両方のエンドポイントを使用できる権限を追加する。"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "057",
+      "text": "企業はインターネットゲートウェイを持つVPCにAWSインフラストラクチャをデプロイしています。VPCにはパブリックサブネットとプライベートサブネットがあります。Amazon RDS for MySQL DBインスタンスがプライベートサブネットにデプロイされています。AWS Lambda関数も同じプライベートサブネットを使用し、DBインスタンスに接続してデータをクエリします。\n開発者がLambda関数を変更し、Amazon Simple Queue Service（Amazon SQS）キューへメッセージを発行するようにしました。変更後、Lambda関数がSQSキューへメッセージを発行しようとするとタイムアウトします。\nこの問題を解決するソリューションはどれですか？（2つ選択）",
+      "type": "multiple",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Lambda関数がVPCに接続されないよう再構成する。"
+        },
+        {
+          "letter": "B",
+          "text": "RDS Proxyをデプロイし、Lambda関数がプロキシ経由でDBインスタンスに接続するよう設定する。"
+        },
+        {
+          "letter": "C",
+          "text": "NATゲートウェイをデプロイし、プライベートサブネットのルートテーブルを更新してすべてのトラフィックをNATゲートウェイへルーティングする。"
+        },
+        {
+          "letter": "D",
+          "text": "VPC内にAmazon SQS用のインターフェイスエンドポイントを作成する。"
+        },
+        {
+          "letter": "E",
+          "text": "VPC内にAmazon SQS用のゲートウェイエンドポイントを作成する。"
+        }
+      ],
+      "correct": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "id": "058",
+      "text": "企業のセキュリティポリシーでは、受信SSHトラフィックを定義されたアドレス群に制限する必要があります。企業は、セキュリティグループが制限のない受信SSHトラフィックを許可しているかを確認するAWS Configルールを使用しています。\nCloudOpsエンジニアが非準拠リソースを発見し、セキュリティグループを手動で修正しました。CloudOpsエンジニアは、他の非準拠リソースの修復を自動化したいと考えています。\nこれらの要件を満たす、最も運用効率の高いソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "AWS Configルールのステータスメトリクスに対するAmazon CloudWatchアラームを作成する。セキュリティグループから非準拠ルールを削除できるAWS Lambda関数を作成し、アラームアクションからLambda関数を呼び出す。"
+        },
+        {
+          "letter": "B",
+          "text": "AWS Configルールで自動修復アクションを設定し、AWS-DisablolncomingSSHOnPort22修復アクションを指定する。"
+        },
+        {
+          "letter": "C",
+          "text": "AWS Configの構成項目変更イベントに対するAmazon EventBridgeルールを設定する。セキュリティグループから非準拠ルールを削除できるAWS Lambda関数を作成し、ルールからLambda関数を呼び出すよう設定する。"
+        },
+        {
+          "letter": "D",
+          "text": "セキュリティグループのインバウンドルールを分析して制限のないSSHアクセスを確認できるAWS Lambda関数を作成する。Lambda関数で非準拠ルールを削除するよう設定し、毎時間Lambda関数を呼び出すAmazon EventBridgeルールを設定する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "059",
+      "text": "CloudOpsエンジニアが、Amazon CloudFront Webディストリビューション、Application Load Balancer（ALB）、Amazon RDS、VPC内のAmazon EC2を使用するWebアプリケーションを保守しています。すべてのサービスでロギングが有効です。CloudOpsエンジニアはWebアプリケーションのHTTP Layer 7ステータスコードを調査する必要があります。\nどのログソースにステータスコードが含まれていますか？（2つ選択）",
+      "type": "multiple",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "VPC Flow Logs"
+        },
+        {
+          "letter": "B",
+          "text": "AWS CloudTrailログ"
+        },
+        {
+          "letter": "C",
+          "text": "ALBアクセスログ"
+        },
+        {
+          "letter": "D",
+          "text": "CloudFrontアクセスログ"
+        },
+        {
+          "letter": "E",
+          "text": "RDSログ"
+        }
+      ],
+      "correct": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "id": "060",
+      "text": "異常なプロセスがプロセッサを完全に使用し、100%で実行されることが分かっています。CloudOpsエンジニアは、この問題が2分を超えて発生した場合にAmazon EC2インスタンスを自動的に再起動したいと考えています。\nこれをどのように実現できますか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "基本モニタリングを使用してEC2インスタンスのAmazon CloudWatchアラームを作成し、インスタンスを再起動するアクションを追加する。"
+        },
+        {
+          "letter": "B",
+          "text": "詳細モニタリングを使用してEC2インスタンスのAmazon CloudWatchアラームを作成し、インスタンスを再起動するアクションを追加する。"
+        },
+        {
+          "letter": "C",
+          "text": "EC2インスタンスを再起動するAWS Lambda関数を作成し、2分ごとにスケジュール実行する。"
+        },
+        {
+          "letter": "D",
+          "text": "EC2ヘルスチェックによって呼び出される、EC2インスタンスを再起動するAWS Lambda関数を作成する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    }
+  ]
+}

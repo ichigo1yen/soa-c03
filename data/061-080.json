@@ -1,0 +1,535 @@
+{
+  "title": "問題 061-080",
+  "questions": [
+    {
+      "id": "061",
+      "text": "企業はAmazon EC2インスタンス上でアプリケーションを実行しています。アプリケーションは大量のトラフィックを処理する必要があり、トラフィックは予測不能です。CloudOpsエンジニアは、トラフィック増加時にアプリケーションが自動的にスケールするようにする必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "multiple",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "EC2インスタンスをAuto Scalingグループに配置し、ターゲット追跡スケーリングポリシーを設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "EC2インスタンスをAuto Scalingグループに配置し、スケジュールされたスケーリングポリシーを設定する。"
+        },
+        {
+          "letter": "C",
+          "text": "EC2インスタンスのサイズを変更するスクリプトを作成し、cronで実行する。"
+        },
+        {
+          "letter": "D",
+          "text": "EC2インスタンスのCPU使用率を監視するCloudWatchアラームを作成し、手動でインスタンスサイズを変更する。"
+        },
+        {
+          "letter": "E",
+          "text": "Create an inline policy."
+        }
+      ],
+      "correct": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "id": "062",
+      "text": "企業はAmazon S3バケットにデータを保存しています。CloudOpsエンジニアは、オブジェクトが誤って削除された場合でも復元できるようにする必要があります。また、過去30日間の任意の時点のオブジェクトを復元できる必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "S3バケットでバージョニングを有効にする。"
+        },
+        {
+          "letter": "B",
+          "text": "S3バケットでS3 Object Lockを有効にする。"
+        },
+        {
+          "letter": "C",
+          "text": "毎日S3バケットのバックアップを作成する。"
+        },
+        {
+          "letter": "D",
+          "text": "S3バケットでライフサイクルルールを設定する。"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "063",
+      "text": "企業はApplication Load Balancer（ALB）の背後にあるAmazon EC2インスタンスでWebアプリケーションを実行しています。CloudOpsエンジニアは、ALBへのHTTPリクエスト数に基づいてEC2インスタンスを自動的にスケールする必要があります。\nこの要件を満たすには、どのスケーリングメトリクスを使用すべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "CPUUtilization"
+        },
+        {
+          "letter": "B",
+          "text": "RequestCountPerTarget"
+        },
+        {
+          "letter": "C",
+          "text": "NetworkIn"
+        },
+        {
+          "letter": "D",
+          "text": "TargetResponseTime"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "064",
+      "text": "企業はAmazon RDS for MySQL DBインスタンスを使用しています。CloudOpsエンジニアは、データベースのCPU使用率が継続的に高くなっていることを確認しました。データベースには読み取りトラフィックが多く、書き込みトラフィックは少ないです。\n読み取りパフォーマンスを改善するための最も適切なソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "DBインスタンスのサイズを増やす。"
+        },
+        {
+          "letter": "B",
+          "text": "RDSリードレプリカを作成し、読み取りトラフィックをリードレプリカへ分散する。"
+        },
+        {
+          "letter": "C",
+          "text": "Multi-AZ配置を有効にする。"
+        },
+        {
+          "letter": "D",
+          "text": "RDS Proxyを使用する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "065",
+      "text": "CloudOpsエンジニアは、Amazon EC2インスタンス上のアプリケーションからAWS Secrets Managerに保存されたデータベース認証情報を取得する必要があります。認証情報はアプリケーションコードに保存してはいけません。\n最小権限の原則に従って要件を満たすには、何をすべきですか？",
+      "type": "multiple",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "IAMユーザーを作成し、アクセスキーをアプリケーションに保存する。"
+        },
+        {
+          "letter": "B",
+          "text": "EC2インスタンスにIAMロールを関連付け、そのロールに特定のシークレットを取得する権限を付与する。"
+        },
+        {
+          "letter": "C",
+          "text": "シークレットを環境変数に保存する。"
+        },
+        {
+          "letter": "D",
+          "text": "認証情報をAmazon S3に保存し、S3バケットへのアクセスを許可する。"
+        },
+        {
+          "letter": "E",
+          "text": "CloudFormation templates can be used only to update existing services"
+        }
+      ],
+      "correct": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "id": "066",
+      "text": "企業はAWS CloudFormationを使用してインフラストラクチャを管理しています。CloudOpsエンジニアは、スタックの更新時に既存のリソースが意図せず置き換えられないようにする必要があります。\nこの要件を満たすために使用できるCloudFormationの機能はどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "DeletionPolicy"
+        },
+        {
+          "letter": "B",
+          "text": "UpdateReplacePolicy"
+        },
+        {
+          "letter": "C",
+          "text": "CreationPolicy"
+        },
+        {
+          "letter": "D",
+          "text": "DependsOn"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "067",
+      "text": "企業はAmazon CloudWatch Logsを使用してアプリケーションログを収集しています。CloudOpsエンジニアは、特定のエラーが発生したときに通知を受け取りたいと考えています。\n最小限の運用作業でこの要件を満たすには、何を使用すべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "CloudWatch LogsメトリクスフィルターとCloudWatchアラームを使用する。"
+        },
+        {
+          "letter": "B",
+          "text": "ログをAmazon S3へエクスポートし、S3イベント通知を使用する。"
+        },
+        {
+          "letter": "C",
+          "text": "定期的にログをダウンロードして検索するAWS Lambda関数を使用する。"
+        },
+        {
+          "letter": "D",
+          "text": "CloudWatch LogsをAmazon RDSへ送信する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "068",
+      "text": "企業にはプライベートサブネット内のAmazon EC2インスタンスがあります。EC2インスタンスはインターネットへ直接アクセスできませんが、Amazon S3にアクセスする必要があります。\n最も費用対効果の高いソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "NATゲートウェイを作成する。"
+        },
+        {
+          "letter": "B",
+          "text": "インターネットゲートウェイを作成する。"
+        },
+        {
+          "letter": "C",
+          "text": "Amazon S3用のゲートウェイVPCエンドポイントを作成する。"
+        },
+        {
+          "letter": "D",
+          "text": "Amazon S3用のインターフェイスVPCエンドポイントを作成する。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "069",
+      "text": "企業はAmazon Route 53を使用してドメイン名を管理しています。CloudOpsエンジニアは、特定のAWSリソースへのトラフィックを複数のエンドポイントに分散する必要があります。各エンドポイントのトラフィック比率を指定する必要があります。\nどのRoute 53ルーティングポリシーを使用すべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "シンプルルーティング"
+        },
+        {
+          "letter": "B",
+          "text": "フェイルオーバールーティング"
+        },
+        {
+          "letter": "C",
+          "text": "加重ルーティング"
+        },
+        {
+          "letter": "D",
+          "text": "レイテンシールーティング"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "070",
+      "text": "企業はAmazon CloudWatchでEC2インスタンスを監視しています。CloudOpsエンジニアは、CPU使用率が80%を超えた場合に通知を受けたいと考えています。条件が10分間継続した場合のみ通知する必要があります。\nCloudWatchアラームはどのように設定すべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "期間を10分、評価期間を1に設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "期間を1分、評価期間を10に設定する。"
+        },
+        {
+          "letter": "C",
+          "text": "期間を5分、評価期間を2に設定する。"
+        },
+        {
+          "letter": "D",
+          "text": "期間を10秒、評価期間を60に設定する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "071",
+      "text": "企業は複数のAWSアカウントをAWS Organizationsで管理しています。CloudOpsエンジニアは、すべてのアカウントのCloudTrailイベントを中央のS3バケットに集約する必要があります。\nこの要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "各アカウントに個別のCloudTrailを作成し、それぞれのログを中央S3バケットへ保存する。"
+        },
+        {
+          "letter": "B",
+          "text": "Organizationsの組織証跡を作成し、すべてのアカウントのCloudTrailイベントを中央S3バケットへ配信する。"
+        },
+        {
+          "letter": "C",
+          "text": "CloudWatch Logsを使用してすべてのアカウントのイベントを集約する。"
+        },
+        {
+          "letter": "D",
+          "text": "AWS Configを使用してすべてのアカウントのイベントを集約する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "072",
+      "text": "企業はAmazon DynamoDBテーブルを使用しています。CloudOpsエンジニアは、テーブルの読み取りキャパシティが不足した場合に自動的にスケールするようにする必要があります。\nどの設定を使用すべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "オンデマンドキャパシティモード"
+        },
+        {
+          "letter": "B",
+          "text": "プロビジョンドキャパシティとAuto Scaling"
+        },
+        {
+          "letter": "C",
+          "text": "DynamoDB Streams"
+        },
+        {
+          "letter": "D",
+          "text": "グローバルテーブル"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "073",
+      "text": "企業はAWS Lambda関数を使用しています。Lambda関数はAmazon SQSキューからメッセージを処理します。処理に失敗したメッセージを一定回数の再試行後に保持する必要があります。\nこの要件を満たすには何を使用すべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "SQSデッドレターキュー"
+        },
+        {
+          "letter": "B",
+          "text": "S3バケット"
+        },
+        {
+          "letter": "C",
+          "text": "CloudWatch Logs"
+        },
+        {
+          "letter": "D",
+          "text": "Lambdaレイヤー"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "074",
+      "text": "CloudOpsエンジニアは、Amazon EC2インスタンスの障害時に別のインスタンスへ自動的に置き換える必要があります。インスタンスはAuto Scalingグループに属していません。\n最小限の運用作業でこれを実現するには何を使用すべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "EC2 Auto Scalingのヘルスチェック置換機能を使用する。"
+        },
+        {
+          "letter": "B",
+          "text": "Amazon CloudWatchアラームとSystems Manager Automationを使用する。"
+        },
+        {
+          "letter": "C",
+          "text": "AWS Lambda関数を毎分実行する。"
+        },
+        {
+          "letter": "D",
+          "text": "EC2インスタンスのユーザーデータを変更する。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "075",
+      "text": "企業はAmazon S3バケットに機密データを保存しています。データは保存時に暗号化する必要があり、暗号化キーを企業が管理する必要があります。\nこの要件を満たす暗号化方式はどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "SSE-S3"
+        },
+        {
+          "letter": "B",
+          "text": "SSE-KMS"
+        },
+        {
+          "letter": "C",
+          "text": "SSE-C"
+        },
+        {
+          "letter": "D",
+          "text": "クライアントサイド暗号化"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "076",
+      "text": "企業はAWS Systems Managerを使用してEC2インスタンスを管理しています。CloudOpsエンジニアは、インスタンスに対して定期的にパッチを適用する必要があります。\n運用作業を最小限にするには、何を使用すべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Systems Manager Patch Manager"
+        },
+        {
+          "letter": "B",
+          "text": "Systems Manager Session Manager"
+        },
+        {
+          "letter": "C",
+          "text": "Systems Manager Parameter Store"
+        },
+        {
+          "letter": "D",
+          "text": "Systems Manager Inventory"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "077",
+      "text": "企業はAmazon EC2インスタンス上でWebサーバーを実行しています。CloudOpsエンジニアは、異常なネットワークトラフィックを調査する必要があります。VPCのネットワークトラフィックに関する情報を取得する必要があります。\nどの機能を使用すべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "VPC Flow Logs"
+        },
+        {
+          "letter": "B",
+          "text": "CloudTrail"
+        },
+        {
+          "letter": "C",
+          "text": "AWS Config"
+        },
+        {
+          "letter": "D",
+          "text": "Route 53 Resolverログ"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "078",
+      "text": "企業はAmazon RDS DBインスタンスを使用しています。CloudOpsエンジニアは、データベースの障害から迅速に復旧できるようにする必要があります。データベースは複数のアベイラビリティーゾーンで高可用性を必要とします。\nどの設定を使用すべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "リードレプリカ"
+        },
+        {
+          "letter": "B",
+          "text": "Multi-AZ配置"
+        },
+        {
+          "letter": "C",
+          "text": "Amazon ElastiCache"
+        },
+        {
+          "letter": "D",
+          "text": "Amazon DynamoDB"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "079",
+      "text": "企業はAmazon CloudFrontを使用して静的コンテンツを配信しています。CloudOpsエンジニアは、ユーザーが最新コンテンツを取得できるようにする必要があります。既存のキャッシュされたオブジェクトをすぐに無効化する必要があります。\n何を使用すべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "CloudFrontキャッシュ無効化"
+        },
+        {
+          "letter": "B",
+          "text": "S3バージョニング"
+        },
+        {
+          "letter": "C",
+          "text": "Route 53ヘルスチェック"
+        },
+        {
+          "letter": "D",
+          "text": "CloudWatchアラーム"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "080",
+      "text": "企業はAWS IAMを使用してリソースへのアクセスを制御しています。CloudOpsエンジニアは、IAMポリシーで許可されているアクセスと、実際に使用されているアクセスを確認したいと考えています。\nどのサービスを使用すべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "IAM Access Analyzer"
+        },
+        {
+          "letter": "B",
+          "text": "AWS CloudTrail"
+        },
+        {
+          "letter": "C",
+          "text": "AWS Config"
+        },
+        {
+          "letter": "D",
+          "text": "Amazon Inspector"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    }
+  ]
+}

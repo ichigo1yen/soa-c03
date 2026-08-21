@@ -1,0 +1,525 @@
+{
+  "title": "問題 121-140",
+  "questions": [
+    {
+      "id": "121",
+      "text": "CloudOpsエンジニアはAWS環境のリソースの可用性を監視・維持しています。Webサーバーソフトウェアを実行するAmazon EC2インスタンスのCPU使用率が、毎日さまざまな時間帯に80%を超えてピークに達していることに気付きました。CPUスパイクは毎日のピーク負荷と相関しています。高いCPU負荷によって顧客のパフォーマンス問題が発生しています。\nCloudOpsエンジニアは、サービスを中断することなくシステムのパフォーマンス問題を解決する必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Amazon CloudWatchアラームを設定し、CPU使用率が80%を超えたときにAWS Systems Manager Automationランブックを呼び出して、EC2インスタンスを垂直スケールする。"
+        },
+        {
+          "letter": "B",
+          "text": "AWS Systems Manager Automationランブックを設定し、CPU使用率が80%を超えたときにアプリケーションを自動的に再起動するスクリプトを実行する。"
+        },
+        {
+          "letter": "C",
+          "text": "Amazon EventBridgeルールを設定してAWS Systems Manager Automationドキュメントを呼び出す。CPU使用率が80%を超えたときにEC2インスタンスのサイズを増やすようドキュメントを設定する。"
+        },
+        {
+          "letter": "D",
+          "text": "Auto Scalingグループを設定し、CPU使用率が80%を超えたときにスケーリングポリシーをトリガーして追加のEC2インスタンスを起動するAmazon CloudWatchアラームを設定する。"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "122",
+      "text": "企業はAmazon CloudWatch LogsのロググループにOSログを収集しています。10分間に特定の例外が5回を超えてログに出現した場合、サポートチームへ自動的に通知するソリューションが必要です。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "ロググループにメトリクスフィルターを作成する。メトリクスを基に期間10分のアラームを作成する。Amazon SNSトピックを作成してアラームから通知し、サポートチームのメールアドレスをSNSトピックに購読させる。"
+        },
+        {
+          "letter": "B",
+          "text": "CloudWatchダッシュボードを作成し、テーブルウィジェットを追加する。CloudWatch Logs Insightsのデータをテーブルに表示し、ダッシュボードをサポートチームと共有する。"
+        },
+        {
+          "letter": "C",
+          "text": "検索パターンに一致するすべてのログをLambda関数へ送信するAWS Lambdaサブスクリプションフィルターを作成する。Lambda関数から通知を受けるAmazon SNSトピックを作成し、サポートチームのメールアドレスを購読させる。"
+        },
+        {
+          "letter": "D",
+          "text": "サポートチームにCloudWatch Logsロググループへの読み取り専用アクセスを付与し、チームが自律的にログを確認できるようにする。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "123",
+      "text": "企業には、すべてのAmazon EBSボリュームを保存時に暗号化するという新しいセキュリティポリシーがあります。暗号化キーへのアクセスを管理するため、カスタムキーポリシーを使用する必要があります。また、キーを毎年1回ローテーションする必要があります。\n最小限の運用オーバーヘッドで要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "AWS KMSの対称カスタマーマネージドキーを作成し、自動キーローテーションを有効にする。"
+        },
+        {
+          "letter": "B",
+          "text": "AWS環境全体でAWS所有のAWS KMSキーを使用する。"
+        },
+        {
+          "letter": "C",
+          "text": "AWS KMSの非対称カスタマーマネージドキーを作成し、自動キーローテーションを有効にする。"
+        },
+        {
+          "letter": "D",
+          "text": "インポートしたキーマテリアルを使用してAWS KMSの対称カスタマーマネージドキーを作成し、毎年手動でキーをローテーションする。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "124",
+      "text": "学校では生徒の出席を記録するWebアプリケーションを使用しています。アプリケーションはAmazon API Gateway REST APIとバックエンドのAWS Lambda関数を使用し、データをオンデマンドキャパシティモードのAmazon DynamoDBテーブルに保存しています。\n教師から、毎週平日の同じ時間帯にアプリケーションのパフォーマンスが低下すると報告されています。CloudOpsエンジニアは、アプリケーションへの需要が突然増加したときだけ問題が発生することを確認しました。負荷が徐々に増加する場合はピーク負荷を処理できます。CloudOpsエンジニアは問題を解決するためにアプリケーションを変更する必要があります。\nこの要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Lambda関数にプロビジョンド同時実行数を設定し、スケジュールされたAuto Scalingを構成する。"
+        },
+        {
+          "letter": "B",
+          "text": "Lambda関数にリザーブド同時実行数を設定し、スケジュールされたAuto Scalingを構成する。"
+        },
+        {
+          "letter": "C",
+          "text": "DynamoDBテーブルをオンデマンドキャパシティモードから、Auto Scalingを使用するプロビジョンドキャパシティモードへ変更する。"
+        },
+        {
+          "letter": "D",
+          "text": "DynamoDBテーブルをオンデマンドキャパシティモードからプロビジョンドキャパシティモードへ変更し、プロビジョンドキャパシティをピーク使用量に合わせて設定する。"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "125",
+      "text": "企業はApplication Load Balancer（ALB）の背後にあるAmazon EC2インスタンスでパブリックWebサイトをホストしています。WebサイトでHTTPS接続をサポートする必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "ALBをNetwork Load Balancerに置き換える。"
+        },
+        {
+          "letter": "B",
+          "text": "AWS Certificate Manager（ACM）を使用してパブリックSSL/TLS証明書を発行し、ALBでその証明書を使用する。"
+        },
+        {
+          "letter": "C",
+          "text": "パブリックSSL/TLS証明書をAWS KMSへインポートし、ALBがAWS KMSから証明書を取得するように設定する。"
+        },
+        {
+          "letter": "D",
+          "text": "ALBに関連付けられたターゲットグループにパブリックSSL/TLS証明書をアタッチする。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "126",
+      "text": "CloudOpsエンジニアは、Amazon EC2インスタンス上の本番環境で実行されるアプリケーションの問題を迅速に解決する必要があります。アプリケーションはAmazon RDSデータベースを使用しています。問題解決のため、EC2インスタンスとRDSデータベースの両方のログを一元的に収集・検索できるソリューションが必要です。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "EC2インスタンスにAmazon CloudWatchエージェントをインストールして設定し、ERRORログイベントをAmazon CloudWatch Logsへ転送する。RDSデータベースからもログイベントをCloudWatch Logsへエクスポートする。CloudWatch Logs Insightsでログを検索する。"
+        },
+        {
+          "letter": "B",
+          "text": "EC2インスタンスにCloudWatchエージェントを設定してINFOログイベントをAmazon S3バケットへ転送する。RDSデータベースにもCloudWatchエージェントをインストールしてERRORログイベントをS3バケットへ転送する。S3 Event NotificationsでAWS Lambda関数を呼び出してログを分析する。"
+        },
+        {
+          "letter": "C",
+          "text": "EC2インスタンスにCloudWatchエージェントを設定してERRORログイベントをCloudWatch Logsへ転送する。Logs & eventsメニューを使用してRDSデータベースのログイベントを確認し、CloudWatch Logs InsightsではEC2インスタンスのログだけを検索する。"
+        },
+        {
+          "letter": "D",
+          "text": "EC2インスタンスにAWS X-Rayエージェントを設定してINFO、DEBUG、レイテンシーログイベントをCloudWatch Logsへ転送する。RDSデータベースからもログイベントをCloudWatch Logsへエクスポートし、CloudWatch Logs Insightsで検索する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "127",
+      "text": "企業にはAWSアカウント内にビジネスクリティカルなリソースがあります。このアカウントでAWS Management Consoleのrootユーザーのサインインイベントが発生するたびに、メール通知を受け取りたいと考えています。\n最も運用効率の高い要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "AWS Management Consoleのrootユーザーサインインイベントを検出するAmazon CloudWatchアラームを作成し、AWS Trusted Advisor経由で直接メール通知を送信するよう設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "Amazon EC2インスタンスを起動し、毎時スクリプトを実行してAWS CloudTrailイベントを分析する。AWS Management Consoleのrootユーザーサインインイベントが発生したときにAmazon SNSトピックへメール通知を送信するようスクリプトを設定する。"
+        },
+        {
+          "letter": "C",
+          "text": "AWS Management Consoleのrootユーザーサインインイベントに反応するAmazon EventBridgeルールを作成し、メール通知をAmazon SQSキューへ送信するよう設定する。"
+        },
+        {
+          "letter": "D",
+          "text": "AWS Management Consoleのrootユーザーサインインイベントに反応するAmazon EventBridgeルールを作成し、メール通知をAmazon SNSトピックへ送信するよう設定する。"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "128",
+      "text": "企業の開発者は複数のAWSアカウントへアプリケーションをデプロイしています。開発者はAWSアカウント内で任意のAWSリソースを作成できます。セキュリティチームは、開発者が企業のAWSアカウント内に作成したリソースを監査したいと考えています。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "セキュリティチーム用のAWSアカウントを作成する。そのアカウントでAWS Audit Managerを設定し、評価を作成して企業のAWSアカウントを評価対象に含め、評価レポートを生成する。"
+        },
+        {
+          "letter": "B",
+          "text": "各AWSアカウントでAWS Configレコーダーを設定する。セキュリティチームのAWSアカウントでAWS Configアグリゲーターを作成し、各AWSアカウントでアグリゲーターを認可する。Amazon Quick SuiteとAmazon Athenaを使用してセキュリティチーム向けレポートを生成する。"
+        },
+        {
+          "letter": "C",
+          "text": "各AWSアカウントでAWS CloudTrailの証跡を作成し、セキュリティチームのアカウントにAmazon RDS DBインスタンスを作成する。各アカウントのCloudTrailからDBインスタンスへログを書き込み、Amazon Quick SuiteでDBインスタンスを検索してレポートを生成する。"
+        },
+        {
+          "letter": "D",
+          "text": "各AWSアカウントでAWS Trusted Advisorを有効にし、定期的にTrusted Advisorチェックを更新するAmazon EventBridgeルールを作成する。Trusted Advisorコンソールでレポートを生成する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "129",
+      "text": "企業では本番インシデントが増加しています。CloudOpsエンジニアは、開発者がAWS Management ConsoleからAmazon EC2インスタンスへ安全にアクセスできるようにする必要があります。開発者はリアルタイムのトラブルシューティングのため、EC2 Instance Connectを使用して正常に接続できる必要があります。\nEC2インスタンスは最新のAmazon Linux 2023 AMIをベースとしており、パブリックにアクセス可能です。インスタンスのセキュリティグループではインバウンドSSHトラフィックが適切に許可されています。開発者はコンソールからデフォルトのec2-userアカウントを使用してインスタンスへアクセスします。\n開発者がEC2 Instance Connectを使用して正常に接続できるようにするため、CloudOpsエンジニアが次に実行すべき手順はどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "EC2アクセス用のIAMロールを作成し、そのロールをEC2インスタンスにアタッチする。"
+        },
+        {
+          "letter": "B",
+          "text": "本番インスタンスにEC2 Instance Connectエージェントをダウンロードしてインストールする。"
+        },
+        {
+          "letter": "C",
+          "text": "開発者にEC2 Instance Connectの使用とEC2インスタンスの記述に必要なIAM権限を付与する。"
+        },
+        {
+          "letter": "D",
+          "text": "AWS CloudTrailのログ記録を有効にし、EC2 Instance Connect用のVPCエンドポイントを作成する。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "130",
+      "text": "企業はアプリケーション用に、さらに4つのAWSリージョンへ追加環境をプロビジョニングするようCloudOpsエンジニアに依頼しました。アプリケーションはus-east-1リージョンで100台を超えるAmazon EC2インスタンス上で稼働しており、完全に設定されたAmazon Machine Image（AMI）を使用しています。企業にはus-east-1でリソースをデプロイするAWS CloudFormationテンプレートがあります。\n最も運用効率よくアプリケーションをプロビジョニングするにはどうすべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "aws ec2 copy-imageコマンドを使用して各リージョンへAMIをコピーし、コピーしたAMI用のマッピングをCloudFormationテンプレートに追加する。"
+        },
+        {
+          "letter": "B",
+          "text": "稼働中のインスタンスのスナップショットを作成して他のリージョンへコピーし、スナップショットからAMIを作成する。各リージョン用にCloudFormationテンプレートを更新して新しいAMIを使用する。"
+        },
+        {
+          "letter": "C",
+          "text": "現在us-east-1で使用しているテンプレートが成功したことを基に、既存のCloudFormationテンプレートを各追加リージョンで実行する。"
+        },
+        {
+          "letter": "D",
+          "text": "CloudFormationテンプレートを更新してAuto Scalingグループに追加リージョンを含め、us-east-1の既存スタックを更新する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "131",
+      "text": "CloudOpsエンジニアは企業のAWSアカウントのセキュリティとコンプライアンスを維持しています。企業ポリシーに従うようAmazon EC2インスタンスを管理するため、部門タグを持たないEC2インスタンスを終了したいと考えています。非準拠リソースはほぼリアルタイムで終了する必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "required-tagsマネージドルールを使用するAWS Configルールを作成して非準拠リソースを特定し、自動修復でAWS-TerminateEC2Instance Automationランブックを実行して非準拠リソースを終了する。"
+        },
+        {
+          "letter": "B",
+          "text": "新しいEC2インスタンスが作成されたときに監視するAmazon EventBridgeルールを作成し、イベントを自動修復用のAmazon SNSトピックへ送信する。"
+        },
+        {
+          "letter": "C",
+          "text": "EC2インスタンスを作成できるすべてのユーザーにec2:CreateTagsおよびec2:DescribeTags権限も付与し、インスタンスのシャットダウン動作をterminateに変更する。"
+        },
+        {
+          "letter": "D",
+          "text": "AWS Systems Manager ComplianceがEC2インスタンスを管理するよう設定し、非準拠リソースを停止するためAWS-StopEC2Instances Automationランブックを呼び出す。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "132",
+      "text": "企業はAmazon SQS FIFOキューを使用してイベントを順番に処理するアプリケーションを運用しています。Amazon S3バケットへ新しいオブジェクトがアップロードされたときに、SQSキューへ自動的に通知を送信するソリューションが必要です。メッセージの順序を維持する必要があります。\n最小限の運用オーバーヘッドで要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Lambda関数を作成し、ListObjectsV2コマンドでオブジェクトをポーリングして新しいオブジェクトを検出し、検出時にSQSキューへメッセージを追加する。"
+        },
+        {
+          "letter": "B",
+          "text": "S3バケットにイベント通知を作成し、FIFO配信オプションを使用して既存のSQSキューへ通知を送る。"
+        },
+        {
+          "letter": "C",
+          "text": "Amazon SNS FIFOトピックを作成し、S3バケットにイベント通知を作成してSNSトピックへ送信する。既存のSQSキューをSNSトピックに購読させる。"
+        },
+        {
+          "letter": "D",
+          "text": "Amazon S3 Access Pointsにアクセスポイントを作成し、新しいアイテムを既存のSQSキューへ送信するよう設定する。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "133",
+      "text": "企業はオンプレミスのワークロードからAWSがホストするDNSサービスを利用する必要があります。重要なアプリケーションのDNS解決を継続できるよう、DNSクエリに高可用性が必要です。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "複数のアベイラビリティーゾーンにAmazon Route 53 Resolverインバウンドエンドポイントをデプロイし、オンプレミスDNSリゾルバーがフェイルオーバー構成でエンドポイントのIPアドレスを使用するよう設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "Amazon Route 53のレイテンシーベースルーティングを使用して、オンプレミスシステムからのDNSクエリを最も近いリゾルバーエンドポイントへ送信する。"
+        },
+        {
+          "letter": "C",
+          "text": "Amazon Route 53プライベートホストゾーンを設定し、オンプレミスネットワークをプライベートホストゾーンに関連付ける。"
+        },
+        {
+          "letter": "D",
+          "text": "複数のアベイラビリティーゾーンにAmazon Route 53 Resolverアウトバウンドエンドポイントをデプロイし、エンドポイントをオンプレミスDNSリゾルバーに関連付ける。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "134",
+      "text": "企業はMulti-AZ構成のAmazon EC2 Windowsインスタンス群でアプリケーションを実行しています。インスタンスから共有ファイルへアクセスできるソリューションが必要です。\nソリューションは高可用性で、ネイティブWindowsストレージ機能を使用し、すべてのファイルリクエストで一貫性を最大化する必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Amazon FSx for Windows File ServerのMulti-AZファイルシステムを作成し、ファイルシステムのDNS名を使用してインスタンスへファイル共有をマッピングする。"
+        },
+        {
+          "letter": "B",
+          "text": "インスタンスから共有Amazon S3バケットへのアクセスを許可し、Windows Task Schedulerを使用してS3バケットの内容を各インスタンスへ定期的に同期する。"
+        },
+        {
+          "letter": "C",
+          "text": "Amazon EFS Standardストレージクラスを使用するファイルシステムを作成し、ファイルシステムのDNS名とEFSマウントヘルパーを使用してインスタンスへマウントする。"
+        },
+        {
+          "letter": "D",
+          "text": "新しいAmazon EBS Multi-Attachボリュームを作成し、各インスタンスに追加ドライブとしてアタッチする。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "135",
+      "text": "CloudOpsエンジニアは、カスタムネットワークACLを使用するパブリックサブネットとプライベートサブネットを持つVPCをトラブルシューティングしています。プライベートサブネットのインスタンスはインターネットへアクセスできません。インターネットゲートウェイはパブリックサブネットにアタッチされています。プライベートサブネットには、同じくパブリックサブネットに配置されたNATゲートウェイへのルートがあります。Amazon EC2インスタンスはVPCのデフォルトセキュリティグループに関連付けられています。\nこのシナリオで問題の原因は何ですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "プライベートサブネットのネットワークACLがすべてのアウトバウンドトラフィックを拒否する設定になっている。"
+        },
+        {
+          "letter": "B",
+          "text": "VPCのプライベートサブネットにNATゲートウェイがデプロイされていない。"
+        },
+        {
+          "letter": "C",
+          "text": "VPCのデフォルトセキュリティグループがEC2インスタンスへのすべてのインバウンドトラフィックをブロックしている。"
+        },
+        {
+          "letter": "D",
+          "text": "VPCのデフォルトセキュリティグループがEC2インスタンスからのすべてのアウトバウンドトラフィックをブロックしている。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "136",
+      "text": "CloudOpsエンジニアは、1台のAmazon EC2インスタンスにアタッチされた1つのAmazon EBSボリュームのスナップショットをAWS Backupで取得するよう設定しました。最初のスナップショットではEBSボリュームに10 GiBのデータがあります。2回目のスナップショットでも10 GiBのデータがありますが、そのうち4 GiBが変更されています。3回目のスナップショットでは2 GiBのデータが追加され、合計12 GiBになりました。\nこれらのスナップショットを保存するために必要な合計ストレージ容量はどれくらいですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "12 GiB"
+        },
+        {
+          "letter": "B",
+          "text": "16 GiB"
+        },
+        {
+          "letter": "C",
+          "text": "26 GiB"
+        },
+        {
+          "letter": "D",
+          "text": "32 GiB"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "137",
+      "text": "企業はアプリケーションをサポートするためAWS上にMySQLデータベースをデプロイする必要があります。データベースは高可用性と復旧可能性を備え、15分のRTO（目標復旧時間）と5分のRPO（目標復旧時点）を満たす必要があります。\n最も運用効率の高い方法で要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Amazon RDSを使用して単一のアベイラビリティーゾーンにMySQLデータベースをデプロイし、自動バックアップを有効にする。"
+        },
+        {
+          "letter": "B",
+          "text": "Amazon RDSを使用して2つのアベイラビリティーゾーンにMySQLデータベースをデプロイし、Multi-AZ配置を使用してポイントインタイムリストアを有効にする。"
+        },
+        {
+          "letter": "C",
+          "text": "Amazon EC2インスタンスを使用して2つのアベイラビリティーゾーンにMySQLデータベースをデプロイし、データベースレプリケーションとAmazon EBSボリュームスナップショットを設定する。"
+        },
+        {
+          "letter": "D",
+          "text": "Amazon RDSを使用して2つのアベイラビリティーゾーンにMySQLデータベースをデプロイし、自動バックアップとデータベースレプリケーションを有効にする。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "138",
+      "text": "企業は、Application Load Balancer（ALB）の背後にあるAuto ScalingグループのAmazon EC2インスタンスでWebアプリケーションを実行しています。\nCloudOpsエンジニアは、サービスを中断せずにデプロイできるようにする必要があります。アプリケーションのバージョン間でトラフィックを切り替え、問題が発生した場合はトラフィックをリダイレクトして以前のバージョンへ迅速にロールバックできる必要があります。\n要件を満たすデプロイ方式はどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "2つのALBターゲットグループを使用してAWS CodeDeployのBlue/Greenデプロイを行う。新しいバージョンを別のフリートへデプロイし、新しいターゲットグループへ段階的にトラフィックを移行する。必要に応じて即時ロールバックできるよう元のフリートを維持する。"
+        },
+        {
+          "letter": "B",
+          "text": "既存のターゲットグループに対してAuto Scalingのインスタンスリフレッシュを使用したインプレースローリング更新を実施する。各インスタンスのコネクションドレイニングを設定し、起動テンプレートを更新して、置換中はヘルスチェックに依存する。"
+        },
+        {
+          "letter": "C",
+          "text": "更新されたアプリケーションを使用して新しいAMIを作成し、Auto Scaling起動テンプレートを変更する。一時的に希望容量を増やして新しいインスタンスを追加し、ALBのコネクションドレイニングを使用しながら古いインスタンスを終了する。"
+        },
+        {
+          "letter": "D",
+          "text": "AWS Step Functionsワークフローを設計して並行するAuto Scalingグループを作成し、監視設定を更新する。ワークフローでALBへのインスタンス登録を切り替え、検証期間後に以前のフリートを自動終了する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "139",
+      "text": "企業は重要なデータをAmazon S3バケットに保存しています。CloudOpsエンジニアは、すべてのS3 APIアクティビティを記録するソリューションを構築する必要があります。\n要件を満たすために実行すべきアクションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "S3バケットメトリクスを設定してオブジェクトアクセスログを記録する。"
+        },
+        {
+          "letter": "B",
+          "text": "AWS CloudTrailの証跡を作成し、すべてのS3オブジェクトのデータイベントをログに記録する。"
+        },
+        {
+          "letter": "C",
+          "text": "各S3バケットでS3サーバーアクセスログを有効にする。"
+        },
+        {
+          "letter": "D",
+          "text": "Amazon S3用AWS IAM Access Analyzerを使用してオブジェクトアクセスログを保存する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "140",
+      "text": "医療企業はVPC内でAmazon SageMakerを使用して、Amazon S3バケットに保存されたデータを利用する機械学習（ML）モデルを構築しています。企業は、SageMakerがパブリックIPアドレスを使用せずに安全にデータへアクセスできるようにしたいと考えています。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Amazon S3ゲートウェイエンドポイントを作成し、SageMakerがAWS PrivateLinkを使用してS3バケットへアクセスするよう設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "SageMakerを実行している同じVPC内にNATゲートウェイをプロビジョニングし、SageMakerがNATゲートウェイを使用してS3バケットへアクセスするよう設定する。"
+        },
+        {
+          "letter": "C",
+          "text": "AWS Site-to-Site VPN接続を設定してSageMakerをS3バケットへ接続する。"
+        },
+        {
+          "letter": "D",
+          "text": "AWS Transit Gatewayを設定してSageMakerからS3バケットへトラフィックをルーティングする。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,540 @@
+{
+  "title": "問題 161-180",
+  "questions": [
+    {
+      "id": "161",
+      "text": "企業は、Amazon EC2インスタンス上で実行されるアプリケーションのコンプライアンスを確保する必要があります。CloudOpsエンジニアは、すべてのEC2インスタンスに特定のソフトウェアパッケージがインストールされ、最新バージョンであることを確認する必要があります。さらに、インスタンス上で実行されているソフトウェアのコンプライアンス状況を定期的に監査する必要があります。\n最小限の運用オーバーヘッドで要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "AWS Systems Manager State Managerを使用してEC2インスタンスにソフトウェアパッケージをインストールし、定期的に更新するようアソシエーションを作成する。AWS Systems Manager Inventoryを使用してインスタンス上のソフトウェアを収集・監査する。"
+        },
+        {
+          "letter": "B",
+          "text": "AWS CloudFormationを使用してEC2インスタンスをプロビジョニングし、UserDataスクリプトで必要なソフトウェアパッケージをインストールする。Amazon Inspectorを使用してソフトウェアコンプライアンスを監査する。"
+        },
+        {
+          "letter": "C",
+          "text": "AWS OpsWorksを使用してEC2インスタンスに必要なソフトウェアをインストール・更新する。AWS Configを使用してソフトウェアコンプライアンスを監査する。"
+        },
+        {
+          "letter": "D",
+          "text": "Amazon EventBridgeルールを作成してEC2インスタンスの起動を検出し、AWS Lambda関数で必要なソフトウェアをインストールする。Lambda関数を定期実行してソフトウェアコンプライアンスを確認する。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "162",
+      "text": "企業は、Amazon S3バケットに保存されているオブジェクトへのアクセスを監査する必要があります。監査チームは、誰がいつ、どのオブジェクトに対してどのAPIアクションを実行したかを確認できる必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "multiple",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "AWS CloudTrailで証跡を作成し、S3データイベントを有効にして、S3オブジェクトレベルのAPIアクティビティを記録する。"
+        },
+        {
+          "letter": "B",
+          "text": "S3サーバーアクセスログを有効にし、ログを別のS3バケットに保存する。"
+        },
+        {
+          "letter": "C",
+          "text": "S3バケットメトリクスを有効にし、CloudWatchダッシュボードでオブジェクトアクセスを監視する。"
+        },
+        {
+          "letter": "D",
+          "text": "AWS Configを有効にしてS3バケットの設定変更を記録する。"
+        },
+        {
+          "letter": "E",
+          "text": "Use AWS Systems Manager to manage the VPN tunnels and to monitor VPN tunnels for any connection errors."
+        }
+      ],
+      "correct": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "id": "163",
+      "text": "企業は、Amazon EC2インスタンス上でホストされるWebアプリケーションの高可用性を確保する必要があります。アプリケーションは単一のAWSリージョン内の複数のアベイラビリティーゾーンにデプロイされています。CloudOpsエンジニアは、アプリケーションのトラフィックを正常なインスタンスにのみ送信する必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Application Load Balancerを作成し、複数のアベイラビリティーゾーンにまたがるターゲットグループへEC2インスタンスを登録する。適切なヘルスチェックを設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "Network Load Balancerを作成し、各アベイラビリティーゾーンのEC2インスタンスを個別のターゲットグループに登録する。ヘルスチェックを無効にする。"
+        },
+        {
+          "letter": "C",
+          "text": "Route 53のレイテンシーベースルーティングを使用し、各アベイラビリティーゾーンのEC2インスタンスをDNSレコードとして登録する。"
+        },
+        {
+          "letter": "D",
+          "text": "Amazon CloudFrontを使用して各EC2インスタンスをオリジンとして設定し、CloudFrontのヘルスチェックを使用する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "164",
+      "text": "企業はAmazon RDS for MySQLデータベースを使用しています。データベースはビジネスクリティカルであり、障害発生時に迅速に復旧できる必要があります。CloudOpsエンジニアは、データベース障害時のデータ損失を最小限に抑えながら高可用性を実現する必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "RDSのMulti-AZ配置を有効にし、自動バックアップを有効にする。"
+        },
+        {
+          "letter": "B",
+          "text": "RDSのリードレプリカを別のアベイラビリティーゾーンに作成し、自動バックアップを無効にする。"
+        },
+        {
+          "letter": "C",
+          "text": "毎時間Amazon EBSスナップショットを作成してRDSデータベースをバックアップする。"
+        },
+        {
+          "letter": "D",
+          "text": "RDSデータベースを単一AZに配置し、毎日手動スナップショットを取得する。"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "165",
+      "text": "企業はAWSアカウント内のIAM権限を定期的にレビューする必要があります。セキュリティチームは、実際には使用されていない権限を特定し、最小権限の原則を適用したいと考えています。\n最小限の運用オーバーヘッドで要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "IAM Access Analyzerのアクティビティ分析を使用して、ユーザーやロールが使用したアクションを確認し、未使用のアクセス権限を特定する。"
+        },
+        {
+          "letter": "B",
+          "text": "AWS CloudTrailログを毎日手動で分析して、IAM APIアクティビティを特定する。"
+        },
+        {
+          "letter": "C",
+          "text": "AWS Configルールを作成して、過剰なIAM権限を持つユーザーを検出する。"
+        },
+        {
+          "letter": "D",
+          "text": "Amazon GuardDutyを使用して、使用されていないIAM権限を検出する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "166",
+      "text": "企業は、Amazon S3バケットに保存するデータのコストを削減したいと考えています。データのアクセスパターンは予測できず、アクセスされないオブジェクトもあります。データはすぐに取り出せる必要があります。\n要件を満たすストレージクラスはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "S3 Standard"
+        },
+        {
+          "letter": "B",
+          "text": "S3 Intelligent-Tiering"
+        },
+        {
+          "letter": "C",
+          "text": "S3 Glacier Flexible Retrieval"
+        },
+        {
+          "letter": "D",
+          "text": "S3 Glacier Deep Archive"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "167",
+      "text": "CloudOpsエンジニアは、Amazon EC2インスタンスのディスク使用量を監視する必要があります。ディスク使用量が80%を超えた場合に通知を受け取りたいと考えています。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "EC2インスタンスにAmazon CloudWatchエージェントをインストールし、ディスク使用率メトリクスをCloudWatchへ送信する。メトリクスに基づくCloudWatchアラームを作成し、SNS通知を設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "EC2インスタンスのCPUUtilizationメトリクスに対してCloudWatchアラームを作成する。"
+        },
+        {
+          "letter": "C",
+          "text": "AWS CloudTrailを使用してディスク使用量を監視し、しきい値を超えたら通知する。"
+        },
+        {
+          "letter": "D",
+          "text": "EC2コンソールのシステムステータスチェックを使用してディスク使用量を監視する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "168",
+      "text": "企業は、複数のAWSアカウントにまたがるリソースの設定変更を一元的に監査したいと考えています。CloudOpsエンジニアは、各アカウントのAWS Configデータを中央のアカウントから確認できるようにする必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "中央アカウントにAWS Configアグリゲーターを作成し、各ソースアカウントのAWS Configデータを集約する。"
+        },
+        {
+          "letter": "B",
+          "text": "各アカウントにCloudTrail証跡を作成し、すべてのログを中央S3バケットへ送信する。"
+        },
+        {
+          "letter": "C",
+          "text": "各アカウントにAWS Configルールを作成し、結果をAmazon SNSで中央アカウントへ送信する。"
+        },
+        {
+          "letter": "D",
+          "text": "中央アカウントにAWS Security Hubを設定し、各アカウントのConfigデータをSecurity Hubへ送信する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "169",
+      "text": "企業は、AWS上で稼働するアプリケーションの秘密情報を安全に保存する必要があります。秘密情報にはデータベース認証情報が含まれており、定期的にローテーションする必要があります。\n最小限の運用オーバーヘッドで要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "AWS Secrets Managerに認証情報を保存し、Secrets Managerの自動ローテーションを設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "認証情報をAWS Systems Manager Parameter StoreのSecureStringパラメータに保存し、手動でローテーションする。"
+        },
+        {
+          "letter": "C",
+          "text": "認証情報を暗号化してAmazon S3に保存し、定期的にLambda関数でローテーションする。"
+        },
+        {
+          "letter": "D",
+          "text": "認証情報をEC2インスタンスの環境変数に保存し、cronジョブで更新する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "170",
+      "text": "企業は、Amazon EC2インスタンスのログを一元的に収集して保存する必要があります。ログは検索・分析でき、一定期間後に自動的に削除される必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "CloudWatch Logsへログを送信し、ロググループの保持期間を設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "各EC2インスタンスにログを保存し、定期的に手動で削除する。"
+        },
+        {
+          "letter": "C",
+          "text": "ログをAmazon S3へ保存し、毎日Lambda関数で古いログを削除する。"
+        },
+        {
+          "letter": "D",
+          "text": "ログをAmazon DynamoDBへ保存し、TTLを設定する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "171",
+      "text": "企業は、Amazon EC2インスタンスを使用してWebアプリケーションを実行しています。アプリケーションは突然のトラフィック増加に対応する必要があります。CloudOpsエンジニアは、需要に応じてEC2インスタンス数を自動的に増減させる必要があります。\n最も適切なソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "EC2インスタンスをAuto Scalingグループに配置し、CPU使用率をターゲットにしたターゲット追跡スケーリングポリシーを設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "毎日固定時刻にEC2インスタンスを起動・停止するスケジュール済みスケーリングのみを使用する。"
+        },
+        {
+          "letter": "C",
+          "text": "手動でEC2インスタンスを追加・削除する。"
+        },
+        {
+          "letter": "D",
+          "text": "CloudWatchダッシュボードでCPU使用率を監視し、必要に応じてインスタンスを手動で起動する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "172",
+      "text": "企業はAmazon SQSを使用して非同期処理を行っています。メッセージを処理するEC2インスタンスが失敗した場合でも、メッセージが失われないようにする必要があります。また、何度も処理に失敗するメッセージを隔離したいと考えています。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "SQSキューにデッドレターキューを設定し、最大受信回数を指定する。"
+        },
+        {
+          "letter": "B",
+          "text": "SQSキューの可視性タイムアウトを0に設定する。"
+        },
+        {
+          "letter": "C",
+          "text": "SQSキューをFIFOキューへ変更する。"
+        },
+        {
+          "letter": "D",
+          "text": "メッセージをAmazon S3へバックアップするLambda関数を作成する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "173",
+      "text": "企業はAmazon CloudFrontを使用してWebサイトを配信しています。CloudOpsエンジニアは、特定のURLパスへのアクセスを別のオリジンへルーティングする必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "CloudFrontのキャッシュビヘイビアを作成し、対象のパスパターンを指定して別のオリジンを設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "Route 53の加重ルーティングを使用してURLパスごとにオリジンを選択する。"
+        },
+        {
+          "letter": "C",
+          "text": "CloudFrontのディストリビューションを複製して別のパスを割り当てる。"
+        },
+        {
+          "letter": "D",
+          "text": "S3バケットポリシーを使用してURLパスに基づいてリクエストをルーティングする。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "174",
+      "text": "企業は、Amazon VPC内のプライベートサブネットにあるEC2インスタンスからAmazon S3へアクセスする必要があります。インターネット経由でトラフィックを送信せず、NATゲートウェイのコストも削減したいと考えています。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "S3用のVPCゲートウェイエンドポイントを作成し、プライベートサブネットのルートテーブルに関連付ける。"
+        },
+        {
+          "letter": "B",
+          "text": "NATゲートウェイを作成し、プライベートサブネットからNATゲートウェイ経由でS3へアクセスする。"
+        },
+        {
+          "letter": "C",
+          "text": "インターネットゲートウェイを作成し、プライベートサブネットから直接S3へアクセスする。"
+        },
+        {
+          "letter": "D",
+          "text": "S3用のVPCインターフェイスエンドポイントを作成し、パブリックIPアドレスを割り当てる。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "175",
+      "text": "企業は、AWS上で実行されるワークロードのセキュリティ検出結果を一元管理したいと考えています。複数のAWSアカウントでAmazon GuardDuty、Amazon Inspector、Amazon Macieを使用しています。\n最小限の運用オーバーヘッドで検出結果を一元管理するソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "AWS Security Hubを使用して各サービスの検出結果を集約し、委任された管理者アカウントから確認する。"
+        },
+        {
+          "letter": "B",
+          "text": "すべての検出結果をAmazon S3へエクスポートし、Athenaでクエリする。"
+        },
+        {
+          "letter": "C",
+          "text": "各サービスのコンソールを個別に確認する。"
+        },
+        {
+          "letter": "D",
+          "text": "CloudWatch Logsへ検出結果を送信し、Lambdaで集約する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "176",
+      "text": "企業は、AWSアカウント内のリソースが企業のタグ付けポリシーに準拠していることを確認する必要があります。新しいリソースが作成されたときに、タグがないリソースを自動的に検出したいと考えています。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "AWS Configのrequired-tagsマネージドルールを使用する。"
+        },
+        {
+          "letter": "B",
+          "text": "AWS CloudTrailでCreateResource APIコールを監視する。"
+        },
+        {
+          "letter": "C",
+          "text": "AWS Trusted Advisorのコスト最適化チェックを使用する。"
+        },
+        {
+          "letter": "D",
+          "text": "Amazon Inspectorでリソースタグをスキャンする。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "177",
+      "text": "CloudOpsエンジニアは、Amazon RDSデータベースのストレージ使用率が高くなった場合に通知を受けたいと考えています。データベースは本番環境で使用されており、ストレージ容量不足による停止を避ける必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "RDSのFreeStorageSpaceメトリクスに対してCloudWatchアラームを作成し、しきい値を設定してSNS通知を送信する。"
+        },
+        {
+          "letter": "B",
+          "text": "RDSのCPUUtilizationメトリクスに対してCloudWatchアラームを作成する。"
+        },
+        {
+          "letter": "C",
+          "text": "AWS CloudTrailを使用してRDSストレージ使用量を監視する。"
+        },
+        {
+          "letter": "D",
+          "text": "RDSコンソールを毎日確認する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "178",
+      "text": "企業は、Amazon EC2インスタンスへのSSHアクセスを安全に管理する必要があります。インターネットからポート22を開放せずに、運用チームがインスタンスへ接続できるようにする必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "AWS Systems Manager Session Managerを使用してEC2インスタンスへ接続する。"
+        },
+        {
+          "letter": "B",
+          "text": "ポート22を0.0.0.0/0へ開放する。"
+        },
+        {
+          "letter": "C",
+          "text": "踏み台ホストをパブリックサブネットに配置し、ポート22をインターネットへ公開する。"
+        },
+        {
+          "letter": "D",
+          "text": "各EC2インスタンスにElastic IPアドレスを割り当て、運用チームのIPアドレスのみを許可する。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "179",
+      "text": "企業は、Amazon EC2インスタンスのソフトウェア脆弱性を定期的に検出する必要があります。検出結果には、脆弱性の重大度と推奨される修復方法を含める必要があります。\n最小限の運用オーバーヘッドで要件を満たすソリューションはどれですか？",
+      "type": "multiple",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Amazon Inspectorを有効にし、EC2スキャンを使用して脆弱性を継続的に評価する。"
+        },
+        {
+          "letter": "B",
+          "text": "Amazon GuardDutyを有効にしてEC2インスタンスをスキャンする。"
+        },
+        {
+          "letter": "C",
+          "text": "AWS Configでカスタムルールを作成してソフトウェア脆弱性を検出する。"
+        },
+        {
+          "letter": "D",
+          "text": "CloudWatchエージェントを使用してインストール済みソフトウェアを収集し、手動で脆弱性を評価する。"
+        },
+        {
+          "letter": "E",
+          "text": "Configure a CloudWatch alarm to enter ALARM state when the disk_used_percent CloudWatch metric is greater than 80%."
+        },
+        {
+          "letter": "F",
+          "text": "Configure a CloudWatch alarm to enter ALARM state when the disk_used CloudWatch metric is greater than 80% or when the disk_free CloudWatch metric is less than 20%."
+        }
+      ],
+      "correct": [
+        "A",
+        "C",
+        "E"
+      ]
+    },
+    {
+      "id": "180",
+      "text": "企業は、AWS CloudFormationを使用してアプリケーションインフラストラクチャを管理しています。CloudOpsエンジニアは、インフラストラクチャ変更を安全にデプロイし、問題が発生した場合に以前の状態へ迅速に戻せるようにする必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "CloudFormation Change Setsを使用して変更内容をプレビューし、問題がないことを確認してからスタックを更新する。"
+        },
+        {
+          "letter": "B",
+          "text": "本番環境でCloudFormationテンプレートを直接編集し、変更を即座に適用する。"
+        },
+        {
+          "letter": "C",
+          "text": "既存スタックを削除してから、新しいテンプレートでスタックを作成する。"
+        },
+        {
+          "letter": "D",
+          "text": "各リソースを手動で変更し、変更内容をスプレッドシートに記録する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    }
+  ]
+}

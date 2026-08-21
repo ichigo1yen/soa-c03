@@ -1,0 +1,525 @@
+{
+  "title": "問題 021-040",
+  "questions": [
+    {
+      "id": "021",
+      "text": "CloudOpsエンジニアが、ある企業のディザスタリカバリ手順を担当しています。企業には本番アカウントのソースAmazon S3バケットがあり、オブジェクトを非本番アカウントの宛先S3バケットにレプリケートする必要があります。CloudOpsエンジニアは、ソースS3バケットから宛先S3バケットへコピーするために、S3のクロスリージョン・クロスアカウントレプリケーションを設定しました。CloudOpsエンジニアが宛先S3バケットのオブジェクトにアクセスしようとすると、Access Deniedエラーが発生します。\nこの問題を解決するには、どのソリューションを使用すればよいですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "レプリケーション設定を変更して、オブジェクトの所有権を宛先S3バケットの所有者に変更する。"
+        },
+        {
+          "letter": "B",
+          "text": "レプリケーションルールがソースS3バケット内のすべてのオブジェクトに適用され、単一のプレフィックスに限定されていないことを確認する。"
+        },
+        {
+          "letter": "C",
+          "text": "S3 Replication Time Control（S3 RTC）の経過を待ってからリクエストを再試行する。"
+        },
+        {
+          "letter": "D",
+          "text": "レプリケートされたオブジェクトのストレージクラスが、ソースS3バケットと宛先S3バケットの間で変更されていないことを確認する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "022",
+      "text": "Amazon EC2インスタンス上で、Amazon Simple Queue Service（Amazon SQS）のキューを使用するアプリケーションが実行されています。CloudOpsエンジニアは、アプリケーションがSQSキューのメッセージを読み取り、書き込み、削除できるようにする必要があります。\nこれらの要件を最も安全な方法で満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "IAMポリシーで適切なキューに対するsqs:SendMessage、sqs:ReceiveMessage、sqs:DeleteMessage権限を許可するIAMユーザーを作成し、そのIAMユーザーの認証情報をアプリケーションの設定に埋め込む。"
+        },
+        {
+          "letter": "B",
+          "text": "IAMポリシーで適切なキューに対するsqs:SendMessage、sqs:ReceiveMessage、sqs:DeleteMessage権限を許可するIAMユーザーを作成し、そのIAMユーザーのアクセスキーとシークレットアクセスキーをEC2インスタンスの環境変数として設定する。"
+        },
+        {
+          "letter": "C",
+          "text": "EC2インスタンスがAWSサービスを呼び出せるIAMロールを作成して関連付け、そのロールに適切なキューへのsqs:*権限を許可するIAMポリシーをアタッチする。"
+        },
+        {
+          "letter": "D",
+          "text": "EC2インスタンスがAWSサービスを呼び出せるIAMロールを作成して関連付け、そのロールに適切なキューへのsqs:SendMessage、sqs:ReceiveMessage、sqs:DeleteMessage権限を許可するIAMポリシーをアタッチする。"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "023",
+      "text": "CloudOpsエンジニアがAmazon RDS for PostgreSQL DBインスタンスのソリューションを設計しています。データベース認証情報は保存し、毎月ローテーションする必要があります。DBインスタンスに接続するアプリケーションは書き込み負荷の高いトラフィックを送信し、クライアント接続数は変動し、短時間で大幅に増加することがあります。\nこれらの要件を満たすために、CloudOpsエンジニアはどのソリューションを選択すべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "AWS Key Management Service（AWS KMS）を設定してDBインスタンスのキーを自動的にローテーションする。RDS Proxyを使用してデータベース接続数の増加に対応する。"
+        },
+        {
+          "letter": "B",
+          "text": "AWS Key Management Service（AWS KMS）を設定してDBインスタンスのキーを自動的にローテーションする。RDSリードレプリカを使用してデータベース接続数の増加に対応する。"
+        },
+        {
+          "letter": "C",
+          "text": "AWS Secrets Managerを設定してDBインスタンスの認証情報を自動的にローテーションする。RDS Proxyを使用してデータベース接続数の増加に対応する。"
+        },
+        {
+          "letter": "D",
+          "text": "AWS Secrets Managerを設定してDBインスタンスの認証情報を自動的にローテーションする。RDSリードレプリカを使用してデータベース接続数の増加に対応する。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "024",
+      "text": "企業はVPCとオンプレミスのデータセンターでコンピューティングリソースを運用しています。企業はすでにVPCとオンプレミスのデータセンター間にAWS Direct Connect接続を確立しています。CloudOpsエンジニアは、VPC内のAmazon EC2インスタンスからオンプレミスのデータセンター内のホストのDNS名を解決できるようにする必要があります。\n継続的なメンテナンスを最小限にしてこの要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Amazon Route 53プライベートホストゾーンを作成し、オンプレミスのデータセンター内のホスト名とIPアドレスをゾーンに登録する。"
+        },
+        {
+          "letter": "B",
+          "text": "Amazon Route 53 Resolverのアウトバウンドエンドポイントを作成する。転送が必要なドメイン名について、オンプレミスのDNSサーバーのIPアドレスを追加する。"
+        },
+        {
+          "letter": "C",
+          "text": "Amazon Route 53 Resolverで逆引きDNSクエリの転送ルールを設定し、VPCのenableDnsHostnames属性をtrueに設定する。"
+        },
+        {
+          "letter": "D",
+          "text": "各EC2インスタンスの/etc/hostsファイルに、オンプレミスのホストのホスト名とIPアドレスを追加する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "025",
+      "text": "企業はAmazon EC2インスタンス上でWebアプリケーションをホストしています。WebサーバーのログはAmazon CloudWatch Logsに発行されています。ログイベントは同じ構造を持ち、ユーザーリクエストに対応するHTTPレスポンスコードが含まれています。企業はWebサーバーがHTTP 404レスポンスを返した回数を監視する必要があります。\n要件を満たす最も運用効率の高いソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "WebサーバーがHTTP 404レスポンスを返した回数をカウントするCloudWatch Logsメトリクスフィルターを作成する。"
+        },
+        {
+          "letter": "B",
+          "text": "WebサーバーがHTTP 404レスポンスを返した回数をカウントするCloudWatch Logsサブスクリプションフィルターを作成する。"
+        },
+        {
+          "letter": "C",
+          "text": "過去1時間のログイベント内の404コード数をカウントするCloudWatch Logs Insightsクエリを実行するAWS Lambda関数を作成する。"
+        },
+        {
+          "letter": "D",
+          "text": "過去1時間のログイベント内の404コード数をカウントするCloudWatch Logs Insightsクエリを実行するスクリプトを作成する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "026",
+      "text": "企業には、Application Load Balancerの背後でAmazon EC2インスタンス上で実行される社内Webアプリケーションがあります。インスタンスは単一のアベイラビリティーゾーンにあるAmazon EC2 Auto Scalingグループで実行されています。CloudOpsエンジニアはアプリケーションを高可用性にする必要があります。\nこの要件を満たすために、CloudOpsエンジニアは何をすべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "ピーク時の使用量に必要なキャパシティを満たすよう、Auto Scalingグループの最大インスタンス数を増やす。"
+        },
+        {
+          "letter": "B",
+          "text": "ピーク時の使用量に必要なキャパシティを満たすよう、Auto Scalingグループの最小インスタンス数を増やす。"
+        },
+        {
+          "letter": "C",
+          "text": "Auto Scalingグループを更新し、同じAWSリージョン内の2つ目のアベイラビリティーゾーンで新しいインスタンスを起動する。"
+        },
+        {
+          "letter": "D",
+          "text": "Auto Scalingグループを更新し、2つ目のAWSリージョンのアベイラビリティーゾーンで新しいインスタンスを起動する。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "027",
+      "text": "CloudOpsエンジニアがAmazon EC2上でシンプルなパブリック向けWebサイトを作成しています。既存のパブリックサブネットにEC2インスタンスを作成し、Elastic IPアドレスを割り当てました。次に、新しいセキュリティグループを作成してインスタンスに適用し、0.0.0.0/0からの受信HTTPトラフィックを許可しました。最後に、新しいネットワークACLを作成してサブネットに適用し、0.0.0.0/0からの受信HTTPトラフィックを許可しました。しかし、Webサイトにインターネットからアクセスできません。\nこの問題の原因は何ですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "CloudOpsエンジニアが、新しいネットワークACLに一時ポートからの戻りトラフィックを許可するアウトバウンドルールを作成していない。"
+        },
+        {
+          "letter": "B",
+          "text": "CloudOpsエンジニアが、ポート80からのHTTPトラフィックを許可するアウトバウンドルールをセキュリティグループに作成していない。"
+        },
+        {
+          "letter": "C",
+          "text": "EC2インスタンスに割り当てられたElastic IPアドレスが変更された。"
+        },
+        {
+          "letter": "D",
+          "text": "サブネットに関連付けられた別のネットワークACLに、ポート80からの受信HTTPトラフィックを拒否するルールが含まれている。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "028",
+      "text": "企業はAWS Systems Managerを使用して多数のAmazon EC2インスタンスを管理したいと考えています。インスタンスはプライベートサブネットにあります。企業は、最小権限の原則に従ってアクセス権限を割り当てています。すべてのプライベートサブネットはNATゲートウェイ経由でインターネットに接続できます。\nCloudOpsエンジニアは最新バージョンのSystems Manager Agent（SSM Agent）をインストールしました。しかし、EC2インスタンスがSystems Manager Fleet Managerに表示されません。CloudOpsエンジニアはこの問題を解決する必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "NATゲートウェイをパブリックサブネットに配置したNATインスタンスに置き換える。プライベートサブネットのルートテーブルを更新してNATインスタンスを使用する。"
+        },
+        {
+          "letter": "B",
+          "text": "Systems Manager用のVPCエンドポイントを作成する。プライベートサブネットのルートテーブルから、NATゲートウェイ経由でインターネットへ向かうルートを削除する。"
+        },
+        {
+          "letter": "C",
+          "text": "インスタンスに関連付けられたEC2インスタンスプロファイルに、AmazonSSMManagedInstanceCore AWS管理ポリシーをアタッチする。"
+        },
+        {
+          "letter": "D",
+          "text": "インスタンスに関連付けられたEC2インスタンスプロファイルに、ssm*へのすべてのアクションを許可するカスタムポリシーをアタッチする。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "029",
+      "text": "企業には、数千の警報システムから通知を収集するアプリケーションがあります。通知には警報通知と情報通知が含まれます。情報通知には、システムの警戒設定処理、解除処理、センサー状態に関する情報が含まれます。\nすべての通知はAmazon Simple Queue Service（Amazon SQS）キューのメッセージとして保持されます。Amazon EC2インスタンスがAuto Scalingグループ内でメッセージを処理します。CloudOpsエンジニアは、情報通知よりも警報通知を優先するソリューションを実装する必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "キュー内のメッセージ数が多くなったときに、Auto Scalingグループがより速くスケールするように調整する。"
+        },
+        {
+          "letter": "B",
+          "text": "Amazon Simple Notification Service（Amazon SNS）のファンアウト機能をAmazon SQSとともに使用し、通知をすべてのEC2インスタンスへ並列送信する。"
+        },
+        {
+          "letter": "C",
+          "text": "Amazon DynamoDBストリームを追加してメッセージ処理を高速化する。"
+        },
+        {
+          "letter": "D",
+          "text": "警報通知用キューと情報通知用キューを作成し、アプリケーションを更新して、まず警報通知キューからメッセージを取得する。"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "030",
+      "text": "企業はAWS Trusted Advisorを使用してセキュリティとコンプライアンスを実装しています。企業のCloudOpsチームは、アクセス可能なTrusted Advisorチェックの一覧を確認しています。\n利用可能なTrusted Advisorチェックの数に影響する要因はどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "少なくとも1台のAmazon EC2インスタンスがrunning状態であるかどうか。"
+        },
+        {
+          "letter": "B",
+          "text": "AWS Supportプラン。"
+        },
+        {
+          "letter": "C",
+          "text": "AWS Organizationsのサービスコントロールポリシー（SCP）。"
+        },
+        {
+          "letter": "D",
+          "text": "AWSアカウントのルートユーザーで多要素認証（MFA）が有効になっているかどうか。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "031",
+      "text": "CloudOpsエンジニアがAWS CloudFormationテンプレートを使用してVPCのデプロイに成功しました。CloudOpsエンジニアは、AWS Organizationsで管理されている複数のアカウントに同じテンプレートをデプロイしたいと考えています。\n運用上のオーバーヘッドを最小限にしてこの要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "管理アカウントからOrganizationAccountAccessRole IAMロールを引き受け、各アカウントにテンプレートをデプロイする。"
+        },
+        {
+          "letter": "B",
+          "text": "各アカウントのロールを引き受けるAWS Lambda関数を作成し、AWS CloudFormation CreateStack API呼び出しを使用してテンプレートをデプロイする。"
+        },
+        {
+          "letter": "C",
+          "text": "アカウント一覧を照会するAWS Lambda関数を作成し、AWS CloudFormation CreateStack API呼び出しを使用してテンプレートをデプロイする。"
+        },
+        {
+          "letter": "D",
+          "text": "管理アカウントからAWS CloudFormation StackSetsを使用して、各アカウントにテンプレートをデプロイする。"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "032",
+      "text": "ある企業のアプリケーションはインターネットプロバイダーによってapp.example.comでホストされています。企業は、自社が所有・管理しているAmazon Route 53を使用して、www.company.comからアプリケーションにアクセスしたいと考えています。\nこれを実現するには、どのRoute 53レコードを作成すべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Aレコード"
+        },
+        {
+          "letter": "B",
+          "text": "エイリアスレコード"
+        },
+        {
+          "letter": "C",
+          "text": "CNAMEレコード"
+        },
+        {
+          "letter": "D",
+          "text": "Pointer（PTR）レコード"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "033",
+      "text": "企業はAmazon ElastiCache（Redis OSS）を使用してアプリケーションデータをキャッシュしています。CloudOpsエンジニアは、キャッシュの耐障害性を高めるソリューションを実装する必要があります。また、ソリューションは目標復旧時間（RTO）を最小限にする必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "ElastiCache（Redis OSS）をElastiCache（Memcached）に置き換える。"
+        },
+        {
+          "letter": "B",
+          "text": "毎時間バックアップを開始するAmazon EventBridgeルールを作成する。必要に応じてバックアップから復元する。"
+        },
+        {
+          "letter": "C",
+          "text": "2つ目のアベイラビリティーゾーンにリードレプリカを作成する。ElastiCache（Redis OSS）レプリケーショングループでMulti-AZを有効にする。"
+        },
+        {
+          "letter": "D",
+          "text": "自動バックアップを有効にする。必要に応じてバックアップから復元する。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "034",
+      "text": "企業には複数のAWSアカウントがあります。CloudOpsエンジニアは、サンドボックスアカウントを使用して、本番アカウントで使用するIAMポリシーを作成・検証しています。CloudOpsエンジニアは、テストのためにAWS CloudFormationを使用してサンドボックスアカウントへポリシーをデプロイします。テストに合格すると、ポリシーを本番環境へデプロイします。CloudOpsエンジニアは、サンドボックスアカウントと本番アカウントの両方でAWS CloudTrailを設定しています。\nCloudOpsエンジニアは、CloudFormationによってポリシーがデプロイされた後にIAMポリシーへの変更を検出したいと考えています。また、ポリシーに変更があった場合は通知を受け取る必要があります。\n管理作業を最小限にしてこれらの要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "CloudTrailを設定し、CloudTrailがIAMポリシーへの変更を検出したときにCloudOpsエンジニアへメール通知を送信する。"
+        },
+        {
+          "letter": "B",
+          "text": "AWS Lambda関数を呼び出してCloudFormationスタックのドリフトをチェックするAmazon EventBridgeルールを作成する。関数がドリフトを検出した場合、Amazon Simple Notification Service（Amazon SNS）を使用してCloudOpsエンジニアに通知するように設定する。"
+        },
+        {
+          "letter": "C",
+          "text": "AWS Identity and Access Management Access Analyzerを使用して、本番アカウントのIAMポリシーにアタッチされたIAMロールのCloudTrailアクティビティに基づいてポリシーを生成する。結果をサンドボックスアカウントのIAMポリシーと比較し、ポリシーが異なる場合はCloudOpsエンジニアに通知する。"
+        },
+        {
+          "letter": "D",
+          "text": "IAMポリシーをJSONドキュメントとしてAmazon S3バケットに保存する。AWS Lambda関数を使用して、IAMポリシーとS3バケットに保存されたJSONドキュメントを定期的に比較する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "035",
+      "text": "金融企業がAmazon S3バケットに機密データを保存しています。企業はAmazon QuickSightを使用してデータを分析し、ダッシュボードレポートを作成しています。企業は、QuickSightへのすべてのデータアクセスと接続が企業のVPCネットワーク境界内に留まることを要求しています。\nこれらの要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "QuickSight用のインターフェイスVPCエンドポイントを作成する。AWS PrivateLinkを使用してVPC内のQuickSightに接続するようエンドポイントを設定する。S3データを指すマニフェストファイルを作成し、QuickSightにS3バケットへのアクセス権限を付与する。"
+        },
+        {
+          "letter": "B",
+          "text": "QuickSight用のVPCエンドポイントを設定する。EC2インスタンスをプロキシとして使用し、VPCとQuickSight間の直接接続を確立する。S3データを指すマニフェストファイルを作成し、EC2インスタンスに保存する。QuickSightにEC2インスタンスへのアクセス権限を付与する。"
+        },
+        {
+          "letter": "C",
+          "text": "Amazon S3 VPCゲートウェイエンドポイントを設定する。QuickSightからのすべてのデータをエンドポイント経由でルーティングして転送する。QuickSightにS3バケットへのアクセス権限を付与する。"
+        },
+        {
+          "letter": "D",
+          "text": "企業のVPCにNATゲートウェイを設定する。QuickSightからのすべてのデータをNATゲートウェイ経由でルーティングして転送する。QuickSightにS3バケットへのアクセス権限を付与する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "036",
+      "text": "企業が本番用ファイルサーバーをAWSへ移行しています。ファイルサーバーに保存されているすべてのデータは、アベイラビリティーゾーンが利用できなくなった場合やシステムメンテナンス中でもアクセス可能でなければなりません。ユーザーはSMBプロトコルを使用してファイルサーバーを操作できる必要があります。また、Windows ACLを使用してファイル権限を管理できる必要があります。\nこれらの要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "単一のAWS Storage Gatewayファイルゲートウェイを作成する。"
+        },
+        {
+          "letter": "B",
+          "text": "Amazon FSx for Windows File ServerのMulti-AZファイルシステムを作成する。"
+        },
+        {
+          "letter": "C",
+          "text": "2つのアベイラビリティーゾーンにAWS Storage Gatewayファイルゲートウェイを1つずつデプロイし、その前段にApplication Load Balancerを設定する。"
+        },
+        {
+          "letter": "D",
+          "text": "Amazon FSx for Windows File Server Single-AZ 2ファイルシステムを2つデプロイし、Microsoft Distributed File System Replication（DFSR）を設定する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "037",
+      "text": "企業のWebアプリケーションでは、毎晩何度もパフォーマンス問題が発生しています。根本原因分析の結果、Amazon EC2 LinuxインスタンスでCPU使用率が突然上昇し、その状態が5分間続くことが判明しました。CloudOpsエンジニアは、より多くのCPUを消費しているサービスまたはプロセスのプロセスID（PID）を特定する必要があります。\n最小限の作業でプロセス使用率の情報を収集するには、CloudOpsエンジニアは何をすべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Amazon CloudWatchエージェントのprocstatプラグインを設定して、CPUプロセスメトリクスを取得する。"
+        },
+        {
+          "letter": "B",
+          "text": "毎分実行してPIDを取得し、通知を送信するAWS Lambda関数を設定する。"
+        },
+        {
+          "letter": "C",
+          "text": "毎晩.pemキーを使用してEC2インスタンスにログインし、topコマンドを実行する。"
+        },
+        {
+          "letter": "D",
+          "text": "デフォルトのAmazon CloudWatch CPU使用率メトリクスを使用して、CloudWatchでPIDを取得する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "038",
+      "text": "企業はエンドユーザーから見たWebサイトの可用性を監視する必要があります。Webサイトの稼働率が99%未満に低下した場合にAmazon Simple Notification Service（Amazon SNS）通知を送信するソリューションが必要です。監視では、Webサイトにおけるユーザー体験を正確に把握する必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "CloudWatch Logsロググループに発行されたWebサイトのログに基づくAmazon CloudWatchアラームを作成する。HTTP 4xxおよび5xxエラー数が指定したしきい値を超えた場合にSNS通知を発行するよう設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "CloudWatchに公開されたWebサイトのメトリクスに基づくAmazon CloudWatchアラームを作成する。異常検出に基づいてSNS通知を発行するよう設定する。"
+        },
+        {
+          "letter": "C",
+          "text": "Amazon CloudWatch Syntheticsのハートビート監視カナリアを作成する。エンドユーザー向けWebサイトのURLにカナリアを関連付ける。カナリア用のCloudWatchアラームを作成し、SuccessPercentメトリクスが99%未満になった場合にSNS通知を発行するよう設定する。"
+        },
+        {
+          "letter": "D",
+          "text": "Amazon CloudWatch Syntheticsの壊れたリンクチェッカー監視カナリアを作成する。エンドユーザー向けWebサイトのURLにカナリアを関連付ける。カナリア用のCloudWatchアラームを作成し、SuccessPercentメトリクスが99%未満になった場合にSNS通知を発行するよう設定する。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "039",
+      "text": "企業は複数のアベイラビリティーゾーンにまたがってAmazon EC2 Auto Scalingを使用しています。企業はEC2インスタンスがプライベートサブネットにプロビジョニングされることを保証する必要があります。\n企業は最近、VPC内のNATゲートウェイの数を1つに減らすことでクラウドインフラストラクチャを最適化しました。このインフラストラクチャ更新後、一部のEC2インスタンスがインターネット接続を失いました。CloudOpsエンジニアは接続問題を解決する必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "既存のNATゲートウェイを同じサブネット内のNATインスタンスに置き換える。"
+        },
+        {
+          "letter": "B",
+          "text": "VPCルートテーブルを更新して、インターネットトラフィックの宛先を既存のNATゲートウェイにする。"
+        },
+        {
+          "letter": "C",
+          "text": "VPCルートテーブルを更新して、インターネットトラフィックの宛先をインターネットゲートウェイにする。"
+        },
+        {
+          "letter": "D",
+          "text": "既存のNATゲートウェイにセカンダリIPアドレスを追加する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "040",
+      "text": "企業はAWS CloudFormationを使用してAWS上のAmazon EC2インスタンスのスタックを管理しています。CloudOpsエンジニアは、誰かがスタックを削除した場合でも、インスタンスとすべてのインスタンスデータを保持する必要があります。\nこれらの要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "CloudFormationテンプレートのEC2インスタンスリソースに対してDeletionPolicy属性をSnapshotに設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "Amazon Data Lifecycle Manager（Amazon DLM）を使用してバックアップを自動化する。"
+        },
+        {
+          "letter": "C",
+          "text": "AWS Backupでバックアッププランを作成する。"
+        },
+        {
+          "letter": "D",
+          "text": "CloudFormationテンプレートのEC2インスタンスリソースに対してDeletionPolicy属性をRetainに設定する。"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    }
+  ]
+}
