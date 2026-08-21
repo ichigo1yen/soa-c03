@@ -1,0 +1,530 @@
+{
+  "title": "問題 001-020",
+  "questions": [
+    {
+      "id": "001",
+      "text": "ある CloudOps エンジニアが以下の AWS CloudFormation テンプレートを調べています。\n=========================\nAWSTemplateFormatVersion: \"2010-09-09\"\nDescription: \"Creates an EC2 Instance\"\nResources:\n    EC2Instance:\n    Type: AWS::EC2::Instance\n    Properties:\n        ImageId: ami-79fd7eee\n        InstanceType: m5n.large\n        SubnetId: subnet-1abc3d3fg\n        PrivateDnsName: ip-10-24-34-0.ec2.internal\n        Tags:\n            - Key: Name\n            Value: !Sub \"$ (AWS: : StackName} Instance\"\n=========================\nスタックの作成が失敗する理由は何ですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "CloudFormationテンプレートのOutputsセクションが省略されている。"
+        },
+        {
+          "letter": "B",
+          "text": "CloudFormationテンプレートのParametersセクションが省略されている。"
+        },
+        {
+          "letter": "C",
+          "text": "PrivateDnsNameはCloudFormationテンプレートから設定できない。"
+        },
+        {
+          "letter": "D",
+          "text": "VPCがCloudFormationテンプレートで指定されていない。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "002",
+      "text": "企業は、企業のAWSワークロードに関連付けられたリソースにユーザー定義タグを適用しています。タグを適用してから20日後、AWS Cost Explorerコンソールでタグを使用してビューをフィルタリングできないことに気付きました。この問題の原因は何ですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Cost Explorerでタグを使用してビューをフィルタリングできるようになるまで、少なくとも30日かかる。"
+        },
+        {
+          "letter": "B",
+          "text": "企業がユーザー定義タグをコスト配分用に有効化していない。"
+        },
+        {
+          "letter": "C",
+          "text": "企業がAWS Cost and Usage Reportを作成していない。"
+        },
+        {
+          "letter": "D",
+          "text": "企業がAWS Budgetsで使用量予算を作成していない。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "003",
+      "text": "100台のAmazon EC2 Windowsインスタンスで構成された環境があります。すべてのEC2インスタンスにAmazon CloudWatchエージェントがデプロイされ、ベースライン設定ファイルを使用してログファイルを収集しています。新たに、50台のインスタンスに存在するDHCPログファイルも収集する必要が生じました。この要件を満たすための**最も運用効率の高い**方法はどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "DHCPログを収集する追加のCloudWatchエージェント設定ファイルを作成する。AWS Systems Manager Run Commandを使用して50台のEC2インスタンス上のCloudWatchエージェントを再起動し、append-configオプションで追加設定ファイルを適用する。"
+        },
+        {
+          "letter": "B",
+          "text": "各EC2インスタンスに管理者権限でログインし、必要なベースラインログとDHCPログをCloudWatchへ送信するPowerShellスクリプトを作成する。"
+        },
+        {
+          "letter": "C",
+          "text": "各EC2インスタンスでCloudWatchエージェント設定ファイルウィザードを実行し、ベースラインログが含まれていることを確認したうえでDHCPログを追加する。"
+        },
+        {
+          "letter": "D",
+          "text": "各EC2インスタンスでCloudWatchエージェント設定ファイルウィザードを実行し、詳細レベルをAdvancedにする。これによりOSログファイルが収集される。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "004",
+      "text": "企業はAmazon S3バケットにバックアップを保存しています。バックアップは作成後少なくとも3か月間、削除できないようにする必要があります。この要件を満たすためにCloudOpsエンジニアは何をすべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "すべてのユーザーに対してs3:DeleteObjectアクションを拒否するIAMポリシーを設定する。オブジェクトが書き込まれてから3か月後にポリシーを削除する。"
+        },
+        {
+          "letter": "B",
+          "text": "新しいS3バケットでS3 Object LockをComplianceモードで有効にする。すべてのバックアップを新しいS3バケットに配置し、保持期間を3か月にする。"
+        },
+        {
+          "letter": "C",
+          "text": "既存のS3バケットでS3 Versioningを有効にする。S3 Lifecycleルールを設定してバックアップを保護する。"
+        },
+        {
+          "letter": "D",
+          "text": "新しいS3バケットでS3 Object LockをGovernanceモードで有効にする。すべてのバックアップを新しいS3バケットに配置し、保持期間を3か月にする。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "005",
+      "text": "企業のCloudOpsエンジニアは、アプリケーションのコンポーネント間の通信をトラブルシューティングしています。企業はVPCフローログをAmazon CloudWatch Logsへ発行するよう設定しましたが、CloudWatch Logsにログがありません。VPCフローログがCloudWatch Logsへ発行されるのを妨げている可能性があるものはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "フローログ用IAMロールにアタッチされたIAMポリシーにlogs:CreateLogGroup権限がない。"
+        },
+        {
+          "letter": "B",
+          "text": "フローログ用IAMロールにアタッチされたIAMポリシーにlogs:CreateExportTask権限がない。"
+        },
+        {
+          "letter": "C",
+          "text": "VPCがIPv6アドレス用に設定されている。"
+        },
+        {
+          "letter": "D",
+          "text": "VPCがAWSアカウント内の別のVPCとピアリングされている。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "006",
+      "text": "企業はレガシーアプリケーションをAWSへ移行しています。複数のアベイラビリティーゾーンにあるAmazon EC2インスタンスへレガシーアプリケーションを手動でインストール・設定し、Application Load Balancer（ALB）を構成しています。ターゲットグループのルーティングアルゴリズムはweighted randomに設定されています。アプリケーションにはセッションアフィニティが必要です。デプロイ後、ユーザーから、レガシー版にはなかったランダムなアプリケーションエラーが報告されました。ターゲットグループのヘルスチェックでは失敗はありません。アプリケーションエラーを解決する必要があります。どのソリューションが要件を満たしますか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "ターゲットグループのルーティングアルゴリズムをleast outstanding requestsに設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "ターゲットグループのanomaly mitigationを有効にする。"
+        },
+        {
+          "letter": "C",
+          "text": "ターゲットグループのクロスゾーン負荷分散属性を無効にする。"
+        },
+        {
+          "letter": "D",
+          "text": "ターゲットグループのderegistration delay属性を増やす。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "007",
+      "text": "企業は、ポイントインタイムリカバリ、Backtrack、自動バックアップが有効になっているAmazon Aurora MySQL DBクラスターを使用しています。CloudOpsエンジニアは、過去72時間以内の特定のリカバリポイントへDBクラスターをロールバックできる必要があります。復元は同じ本番DBクラスターで完了する必要があります。どのソリューションが要件を満たしますか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Aurora Replicaを作成し、レプリカを昇格してプライマリDBインスタンスを置き換える。"
+        },
+        {
+          "letter": "B",
+          "text": "AWS Lambda関数を作成して自動バックアップを既存のDBクラスターへ復元する。"
+        },
+        {
+          "letter": "C",
+          "text": "Backtrackを使用して、既存のDBクラスターを目的のリカバリポイントへ巻き戻す。"
+        },
+        {
+          "letter": "D",
+          "text": "ポイントインタイムリカバリを使用して、既存のDBクラスターを目的のリカバリポイントへ復元する。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "008",
+      "text": "CloudOpsエンジニアは、失敗したAWS CloudFormationスタック作成をトラブルシューティングしています。問題を特定する前に、スタックとそのリソースが削除されてしまいます。今後のデプロイでは、CloudFormationが正常に作成したリソースを保持する必要があります。この要件を満たすために何をすべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "スタック作成時にDisableRollbackパラメータの値をFalseに設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "スタック作成時にOnFailureパラメータの値をDO_NOTHINGに設定する。"
+        },
+        {
+          "letter": "C",
+          "text": "スタック作成時に、ロールバックトリガーがDO_NOTHINGのロールバック設定を指定する。"
+        },
+        {
+          "letter": "D",
+          "text": "スタック作成時にOnFailureパラメータの値をROLLBACKに設定する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "009",
+      "text": "企業は、Elastic Load Balancing（ELB）ロードバランサーの背後にあるAmazon EC2インスタンスでパブリックWebアプリケーションを実行する予定です。セキュリティチームはAWS Certificate Manager（ACM）証明書を使用してWebサイトを保護したいと考えています。ロードバランサーはHTTPリクエストを自動的にHTTPSへリダイレクトする必要があります。どのソリューションが要件を満たしますか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "ポート80にHTTPSリスナーを1つ持つApplication Load Balancerを作成する。リスナーのポート80にSSL/TLS証明書をアタッチし、HTTPからHTTPSへリダイレクトするルールを作成する。"
+        },
+        {
+          "letter": "B",
+          "text": "ポート80にHTTPリスナー、ポート443にHTTPSプロトコルリスナーを持つApplication Load Balancerを作成する。ポート443のリスナーにSSL/TLS証明書をアタッチし、ポート80から443へリダイレクトするルールを作成する。"
+        },
+        {
+          "letter": "C",
+          "text": "ポート80と443にTCPリスナーを2つ持つApplication Load Balancerを作成する。ポート443のリスナーにSSL/TLS証明書をアタッチし、ポート80から443へリダイレクトするルールを作成する。"
+        },
+        {
+          "letter": "D",
+          "text": "ポート80と443にTCPリスナーを2つ持つNetwork Load Balancerを作成する。ポート443のリスナーにSSL/TLS証明書をアタッチし、ポート80から443へリダイレクトするルールを作成する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "010",
+      "text": "企業はAWS Organizationsを使用して複数のAWSアカウントを管理しています。組織には組織単位（OU）が設定されており、application OUはさまざまなアプリケーションをサポートしています。CloudOpsエンジニアは、application OU内のすべてのアカウントで、CostCenter-Projectタグを持たないAmazon EC2インスタンスの起動をユーザーが行えないようにする必要があります。この制限はapplication OU内のアカウントにのみ適用する必要があります。どのソリューションが要件を満たしますか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "CostCenter-Projectタグが存在する場合にec2:RunInstancesアクションを許可するポリシーを持つIAMグループを作成し、applicationアカウントへのアクセスが必要なすべてのIAMユーザーをそのグループに配置する。"
+        },
+        {
+          "letter": "B",
+          "text": "CostCenter-Projectタグが存在しない場合にec2:RunInstancesアクションを拒否するサービスコントロールポリシー（SCP）を作成し、application OUにアタッチする。"
+        },
+        {
+          "letter": "C",
+          "text": "CostCenter-Projectタグが存在する場合にec2:RunInstancesアクションを許可するポリシーを持つIAMロールを作成し、application OU内のアカウントにいるIAMユーザーへアタッチする。"
+        },
+        {
+          "letter": "D",
+          "text": "CostCenter-Projectタグが存在しない場合にec2:RunInstancesアクションを拒否するSCPを作成し、ルートOUにアタッチする。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "011",
+      "text": "企業は300台を超えるLinuxベースのインスタンスで業務アプリケーションを実行しています。各インスタンスにはAWS Systems Manager Agent（SSM Agent）がインストールされています。今後、インスタンス数は増える予定です。すべての業務アプリケーションインスタンスには同じユーザー定義タグが付いています。CloudOpsエンジニアは、すべての業務アプリケーションインスタンスでコマンドを実行し、プライベートリポジトリからパッケージをダウンロードしてインストールしたいと考えています。リポジトリへの負荷を避けるため、同時に30件を超えるダウンロードが発生しないようにする必要があります。**最も運用効率の高い**方法はどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "セカンダリタグを使用して30台ずつ10バッチを作成する。Systems Manager Run Commandドキュメントでパッケージをダウンロード・インストールし、セカンダリタグをターゲットとして指定する。各バッチを1回ずつ実行する。"
+        },
+        {
+          "letter": "B",
+          "text": "AWS Lambda関数を使用してSystems Manager Run Commandドキュメントを自動実行し、ユーザー定義タグを持つインスタンスID一覧を読み込む。Lambda関数の予約済み同時実行数を30に設定する。"
+        },
+        {
+          "letter": "C",
+          "text": "Systems Manager Run Commandドキュメントでパッケージをダウンロード・インストールする。rate controlで同時実行数を30に設定し、ユーザー定義タグを使用してターゲットを指定する。"
+        },
+        {
+          "letter": "D",
+          "text": "AWS Step Functionsのparallel workflow stateを使用してSystems Manager Run Commandドキュメントを自動実行し、ユーザー定義タグを持つインスタンスID一覧を読み込む。並列ステート数を30に設定し、Step Functionsワークフローを10回実行する。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "012",
+      "text": "企業は、複数のAWSリージョンにわたるレイテンシーベースルーティングを使用してAmazon Route 53で耐障害性を確保しています。Route 53のレイテンシーベースルーティングで最も近いリージョンへトラフィックを誘導し、各リージョン内ではweighted Aレコードで複数のアベイラビリティーゾーンへトラフィックを分散しています。最近の更新中に、一部のアベイラビリティーゾーンのエンドポイントが異常になりましたが、Route 53は引き続き異常なエンドポイントへトラフィックをルーティングしました。今後この問題を防ぐ必要があります。どのソリューションが要件を満たしますか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "最近の更新中にトラフィックを受信した各weightedレコードにRoute 53ヘルスチェックを追加する。"
+        },
+        {
+          "letter": "B",
+          "text": "更新中にトラフィックを送る必要があるリージョンのRoute 53レコードの重みを増やす。"
+        },
+        {
+          "letter": "C",
+          "text": "すべてのレコードを、すべてのリージョンにわたるレイテンシーベースルーティングに統一して再構成する。"
+        },
+        {
+          "letter": "D",
+          "text": "変更をより速く検出できるよう、レイテンシーベースルーティングのTTL値を下げる。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "013",
+      "text": "企業は、AWSアカウントで起動されるすべてのAmazon EC2 Windowsインスタンスにサードパーティ製エージェントがインストールされていることを保証する必要があります。企業はAWS Systems Managerを使用しており、Windowsインスタンスには適切なタグが付けられています。アップデートが利用可能になったとき、サードパーティ製エージェントへ定期的にアップデートを適用する必要があります。要件を**最小限の運用作業**で満たす手順の組み合わせはどれですか？（2つ選択）",
+      "type": "multiple",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "サードパーティ製エージェント用のSystems Manager Distributorパッケージを作成する。"
+        },
+        {
+          "letter": "B",
+          "text": "Windowsのタグ値を含むSystems Manager OpsItemを作成し、Systems Manager InventoryをOpsItemにアタッチする。"
+        },
+        {
+          "letter": "C",
+          "text": "AWS Lambda関数を作成し、各インスタンスにログインして必要に応じてサードパーティ製エージェントをインストールまたは更新するようプログラムする。"
+        },
+        {
+          "letter": "D",
+          "text": "Systems Manager State Managerの関連付けを作成してAWS-RunRemoteScriptドキュメントを実行し、サードパーティ製エージェントパッケージの詳細を入力する。"
+        },
+        {
+          "letter": "E",
+          "text": "Systems Manager State Managerの関連付けを作成してAWS-ConfigureAWSPackageドキュメントを実行し、サードパーティ製エージェントパッケージの詳細を入力する。Windows用の適切なタグ値に基づいてインスタンスタグを指定する。"
+        }
+      ],
+      "correct": [
+        "A",
+        "E"
+      ]
+    },
+    {
+      "id": "014",
+      "text": "企業は、2つのAWSリージョンでカスタムAmazon Machine Image（AMI）からAmazon EC2インスタンスをデプロイしています。すべてのインスタンスをAWS Systems Managerに登録しています。あるインスタンスのOSに重大なゼロデイ脆弱性があることを発見しましたが、影響を受けるインスタンス数は不明です。CloudOpsエンジニアは、影響を受けるEC2インスタンスへOSパッチをデプロイするソリューションを実装する必要があります。**最小限の運用オーバーヘッド**で要件を満たす方法はどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Systems Manager Patch Managerでパッチベースラインを定義する。Patch Managerのスキャンを使用して影響を受けるインスタンスを特定し、各リージョンでPatch Nowを使用して影響を受けるインスタンスを更新する。"
+        },
+        {
+          "letter": "B",
+          "text": "AWS Configを使用して影響を受けるインスタンスを特定する。Systems Manager Patch Managerでパッチベースラインを定義し、Patch ManagerのPatch Nowを使用して影響を受けるインスタンスを更新する。"
+        },
+        {
+          "letter": "C",
+          "text": "Systems Manager Complianceイベントに反応するAmazon EventBridgeルールを作成し、影響を受けるインスタンスでパッチベースラインを実行するよう設定する。"
+        },
+        {
+          "letter": "D",
+          "text": "AWS Configを使用して影響を受けるインスタンスを特定する。既存のEC2 AMIを必要なパッチで更新し、新しいAMIから手動でインスタンスを起動して両リージョンの影響を受けるインスタンスを置き換える。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "015",
+      "text": "企業はAmazon EC2インスタンス上でFTPサーバーをホストしています。AWS環境では、アタッチされたセキュリティグループでFTPポートがパブリックに公開されているため、AWS Security HubがEC2インスタンスの検出結果をAmazon EventBridgeへ送信しています。CloudOpsエンジニアは、Security Hubの検出結果と同様の公開ポート検出結果を自動修復するイベント駆動型ソリューションを求めています。どのソリューションが要件を満たしますか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "既存のEventBridgeイベントを設定して、公開ポートを持つEC2インスタンスを停止する。"
+        },
+        {
+          "letter": "B",
+          "text": "FTPサーバーにcronジョブを作成してAWS Lambda関数を呼び出す。Lambda関数で対象EC2インスタンスのセキュリティグループを変更し、パブリックアクセスを許可するインスタンスを削除する。"
+        },
+        {
+          "letter": "C",
+          "text": "FTPサーバーにcronジョブを作成してAWS Lambda関数を呼び出す。Lambda関数でサーバーをFTPからSFTPへ変更する。"
+        },
+        {
+          "letter": "D",
+          "text": "既存のEventBridgeイベントを設定してAWS Lambda関数を呼び出す。Lambda関数でパブリックアクセスを許可しているセキュリティグループルールを削除する。"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "016",
+      "text": "企業は、高性能コンピューティング（HPC）仮想マシン（VM）をAmazon EC2インスタンスへ移行する予定です。CloudOpsエンジニアは、このデプロイ用のプレイスメントグループを選択する必要があります。戦略ではネットワークレイテンシーを最小化し、HPC VM間のネットワークスループットを最大化する必要があります。どの戦略を選択すべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "1つのアベイラビリティーゾーン内のcluster placement groupにインスタンスをデプロイする。"
+        },
+        {
+          "letter": "B",
+          "text": "2つのアベイラビリティーゾーンにまたがるpartition placement groupにインスタンスをデプロイする。"
+        },
+        {
+          "letter": "C",
+          "text": "1つのアベイラビリティーゾーン内のpartition placement groupにインスタンスをデプロイする。"
+        },
+        {
+          "letter": "D",
+          "text": "2つのアベイラビリティーゾーンにまたがるspread placement groupにインスタンスをデプロイする。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "017",
+      "text": "企業はAWS Organizationsを使用して複数のアカウントを管理しています。セキュリティチームは、AWSネイティブサービスを使用してすべてのAWSアカウントを定期的にCenter for Internet Security（CIS）AWS Foundations Benchmarkに照らしてスキャンしたいと考えています。**最も運用効率の高い**方法はどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "中央のセキュリティアカウントをAWS Security Hub管理者アカウントとして指定する。Security Hub管理者アカウントから招待を送信し、メンバーアカウントから招待を承諾するスクリプトを作成する。新しいアカウントが作成されるたびにスクリプトを実行する。Security HubでCIS AWS Foundations Benchmarkスキャンを設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "Amazon Inspectorを使用してすべてのアカウントでCIS AWS Foundations Benchmarkを実行する。"
+        },
+        {
+          "letter": "C",
+          "text": "中央のセキュリティアカウントをAmazon GuardDuty管理者アカウントとして指定する。GuardDuty管理者アカウントから招待を送信し、メンバーアカウントから招待を承諾するスクリプトを作成する。新しいアカウントが作成されるたびにスクリプトを実行する。GuardDutyでCIS AWS Foundations Benchmarkスキャンを設定する。"
+        },
+        {
+          "letter": "D",
+          "text": "AWS Security Hub管理者アカウントを指定する。組織内の新しいアカウントが自動的にメンバーアカウントになるよう設定し、CIS AWS Foundations Benchmarkスキャンを有効にする。"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "018",
+      "text": "企業では、必要以上のボリュームパフォーマンス容量を持つAmazon EC2インスタンスがユーザーによってデプロイされています。CloudOpsエンジニアは、インスタンスに関連付けられたすべてのAmazon Elastic Block Store（Amazon EBS）ボリュームを確認し、IOPSとスループットに基づくコスト最適化の推奨事項を作成する必要があります。**最も運用効率の高い**方法はどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "EC2コンソールの監視グラフを使用してEBSボリュームのメトリクスを確認する。各ボリュームの使用容量とプロビジョニング容量を比較し、使用率が低いボリュームを特定する。"
+        },
+        {
+          "letter": "B",
+          "text": "EC2コンソールからEC2インスタンスを停止し、EC2インスタンスタイプをAmazon EBS-optimizedへ変更して、インスタンスを起動する。"
+        },
+        {
+          "letter": "C",
+          "text": "AWS Compute Optimizerをオプトインする。メトリクスが収集されるのに十分な時間を置き、Compute OptimizerのEBSボリュームに関する検出結果を確認する。"
+        },
+        {
+          "letter": "D",
+          "text": "EC2インスタンスにfioツールをインストールし、必要なワークロードを近似する.cfgファイルを作成する。ベンチマーク結果を使用して、プロビジョニングされたEBSボリュームが最適なタイプか判断する。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "019",
+      "text": "CloudOpsエンジニアは、企業の現在および将来のすべてのAmazon S3バケットでログ記録が有効になっていることを保証する必要があります。S3バケットでログ記録が有効になっていない場合、自動プロセスで有効化する必要があります。どのソリューションが要件を満たしますか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "AWS Trusted Advisorを使用してログ記録が有効になっていないS3バケットをチェックし、該当するバケットでログ記録を有効にするようチェックを設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "すべての現在および将来のS3バケットでログ記録が有効になっていることを要求するS3バケットポリシーを設定する。"
+        },
+        {
+          "letter": "C",
+          "text": "s3-bucket-logging-enabled AWS Configマネージドルールを使用し、AWS Lambda関数を使用してログ記録を有効にする修復アクションを追加する。"
+        },
+        {
+          "letter": "D",
+          "text": "s3-bucket-logging-enabled AWS Configマネージドルールを使用し、AWS-ConfigureS3BucketLogging AWS Systems Manager Automationランブックを使用してログ記録を有効にする修復アクションを追加する。"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "020",
+      "text": "企業には数百万人の購読者がいます。マーケティング部門は、毎週土曜日に購読者へ通知を送信するプロセスを自動化したいと考えています。企業にはすでにAmazon Simple Notification Service（Amazon SNS）を使用して購読者へ通知を送信する仕組みがありますが、これまでは通知を手動で送信していました。CloudOpsエンジニアは、スケジュールに従って通知を自動送信するソリューションを必要としています。**最も運用効率の高い**方法はどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "新しいAmazon EC2インスタンスを起動し、毎週土曜日にAWS SDKを使用してSNS通知を購読者へ送信するcronジョブを設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "毎週土曜日にトリガーされるAmazon EventBridgeルールを作成し、そのルールでSNSトピックへ通知を発行するよう設定する。"
+        },
+        {
+          "letter": "C",
+          "text": "毎週土曜日に購読者へ通知を送信するメッセージファンアウトへのSNSサブスクリプションを作成する。"
+        },
+        {
+          "letter": "D",
+          "text": "AWS Step Functionsのスケジューリング機能を使用して毎週土曜日にStep Functionsのステップを実行し、そのステップでSNSトピックへメッセージを発行する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    }
+  ]
+}

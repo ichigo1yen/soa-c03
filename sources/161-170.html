@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)file:///C:/Users/ichigo/Desktop/AWS/SOA-c03/161-170.html -->
+<html lang="ja" class="js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths no-cssreflections translated-ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>AWS認定クラウドオペレーションエンジニア - アソシエイトSOA-C03試験 問題161-170</title>
+  <link rel="stylesheet" type="text/css" href="./161-170_files/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./161-170_files/style.css">
+  <link rel="stylesheet" type="text/css" href="./161-170_files/forum.css">
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="./161-170_files/m=el_main_css"></head>
+
+<body class="home2">
+  <div class="sec-spacer pt-50">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="discussion-list-header">
+            <h1>
+              <i class="fa fa-file-text-o mr-3"></i><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">AWS認定クラウドオペレーションエンジニア - アソシエイトSOA-C03試験 問題161-170</font></font></h1>
+          </div>
+        </div>
+      </div>
+      <!-- BEGIN Discussion Content -->
+      <div class="discussion-header-container">
+        <!-- Question#1 -->
+					<div class="question-body mt-3 pt-3 border-top" data-id="1012391"><b>質問#161</b>
+						<p class="card-text"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+							
+								企業は、自社のメインのAWS本番アカウントで新しいAmazon EC2インスタンスが起動した際に、即座にメール通知を受け取る必要があります。</font></font><br><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">この要件を満たすソリューションはどれでしょうか？
+							
+						</font></font></p>
+						
+							
+								<div class="voted-answers-tally d-none">
+									
+										<script id="1012391" type="application/json">[]</script>
+									
+								</div>
+							
+							<div class="question-choices-container">
+								<ul>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="A"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													A.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											SMTPメールリレー経由で電子メールメッセージを送信するユーザーデータスクリプトを作成します。ユーザーデータスクリプトの受信者として、会社のメールアドレスを含めます。標準化されたビルドプロセスの一環として、すべての新しいEC2インスタンスにユーザーデータスクリプトが含まれるようにします。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="B"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													B.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											Amazon SNSトピックを作成します。AWS Systems Managerを設定して、EC2イベントをSNSトピックに発行します。AWS Lambda関数を作成してSNSトピックをポーリングします。Lambda関数を設定して、会社のメールアドレスにメッセージを送信します。
+										</font></font></li>
+									
+										<li class="multi-choice-item correct-hidden">
+											
+												<span class="multi-choice-letter" data-choice-letter="C"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													C.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											Amazon SNSトピックと、メールプロトコルを使用するサブスクリプションを作成します。サブスクライバーとして会社のメールアドレスを入力します。EC2インスタンスの起動時に反応するAmazon EventBridgeルールを作成します。ルールのターゲットとしてSNSトピックを指定します。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="D"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													D.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											Amazon SNSトピックと、メールプロトコルを使用するサブスクリプションを作成します。サブスクライバーとして会社のメールアドレスを入力します。EC2インスタンスの起動時にイベントターゲットとしてSNSトピックを指定するには、EC2 AssociateInstanceEventWindow操作を使用します。
+										</font></font></li>
+									
+								</ul>
+							</div>
+						
+						<a href="https://www.examtopics.com/exams/amazon/aws-certified-cloudops-engineer-associate-soa-c03/view/" class="btn btn-primary"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">回答例を表示</font></font></a>
+						
+					</div>
+        <!-- Question#2 -->
+					<div class="question-body mt-3 pt-3 border-top" data-id="1012392"><b>質問#162</b>
+						<p class="card-text"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+							
+								ある企業が、自社のVPCとオンプレミスのデータセンター間で、ログ記録を有効にしたAWSサイト間VPN接続を構築しました。同社の財務チームは、データセンターからVPC内で実行されているアプリケーションにアクセスしようとした際に、断続的な接続障害が発生し始めました。VPN</font></font><br><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">トンネルが利用できなくなった場合に即座に通知を受け取るための自動監視ソリューションを導入する必要があります。</font></font><br><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">この要件を満たす手順の組み合わせはどれですか？（2つ選択してください。）
+							
+						</font></font></p>
+						
+							
+								<div class="voted-answers-tally d-none">
+									
+										<script id="1012392" type="application/json">[]</script>
+									
+								</div>
+							
+							<div class="question-choices-container">
+								<ul>
+									
+										<li class="multi-choice-item correct-hidden">
+											
+												<span class="multi-choice-letter" data-choice-letter="A"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													A.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											Amazon CloudWatch Logs を使用して VPN 収集ログを収集および保存します。ログを読みやすいメトリクスに変換します。VPN トンネルのメトリクスをログからフィルタリングするためのメトリクスフィルタを作成します。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="B"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													B.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											AWS CloudTrail を使用して VPN ログを収集します。ログは Amazon S3 バケットに保存します。Amazon Athena を使用してデータをクエリし、サイト間 VPN トンネル接続エラーを検出します。エラー ファイルは別の S3 バケットに保存します。
+										</font></font></li>
+									
+										<li class="multi-choice-item correct-hidden">
+											
+												<span class="multi-choice-letter" data-choice-letter="C"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													C.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											VPNトンネルのメトリクスを使用してAmazon CloudWatchアラームを作成します。VPNトンネルの状態が変化したときに通知を送信するには、Amazon SNSを使用します。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="D"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													D.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											Amazon EventBridge ルールを使用して AWS Lambda 関数を呼び出します。VPN トンネル接続エラーが検出されたときに Amazon SNS を使用して通知を送信するように Lambda 関数を設定します。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="E"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													E.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											AWS Systems Managerを使用してVPNトンネルを管理し、VPNトンネルの接続エラーを監視します。
+										</font></font></li>
+									
+								</ul>
+							</div>
+						
+						<a href="https://www.examtopics.com/exams/amazon/aws-certified-cloudops-engineer-associate-soa-c03/view/" class="btn btn-primary"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">回答例を表示</font></font></a>
+						
+					</div>
+        <!-- Question#3 -->
+					<div class="question-body mt-3 pt-3 border-top" data-id="1012393"><b>質問#163</b>
+						<p class="card-text"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+							
+								ある企業が、Amazon EC2 インスタンス上で非本番環境のアプリケーションを運用しています。このアプリケーションは、すべてのエラーメッセージをローカルファイルシステムのログファイルに記録します。ログファイルに書き込まれるエントリはすべて「error」という単語で始まります。</font></font><br><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">クラウドオペレーションエンジニアは、過去 1 年間に発生したすべてのエラーを検索できるソリューションを実装する必要があります。</font></font><br><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">この要件を満たすソリューションはどれでしょうか？
+							
+						</font></font></p>
+						
+							
+								<div class="voted-answers-tally d-none">
+									
+										<script id="1012393" type="application/json">[]</script>
+									
+								</div>
+							
+							<div class="question-choices-container">
+								<ul>
+									
+										<li class="multi-choice-item correct-hidden">
+											
+												<span class="multi-choice-letter" data-choice-letter="A"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													A.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											EC2インスタンスにAmazon CloudWatchエージェントをインストールします。エージェントを設定して、ログをAmazon CloudWatch Logsロググループに送信するようにします。ロググループに、「error」という単語を含むすべてのメッセージを対象としたメトリックフィルタを作成します。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="B"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													B.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											EC2インスタンスにAmazon CloudWatchエージェントをインストールします。エージェントを設定して、Amazon SNSメッセージをAmazon CloudWatch Logsロググループに送信するようにします。ロググループに、「error」という単語を含むすべてのメッセージを対象としたメトリックフィルタを作成します。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="C"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													C.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+											
+											ログファイルを設定し、すべてのメッセージをAmazon SQSキューに投稿します。AWS Lambda関数を作成します。Lambda関数を設定し、メッセージに「error」という単語が含まれているかどうかを判定します。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="D"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													D.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+											
+											ログファイルを設定し、すべてのメッセージをAmazon S3バケットに送信するようにします。S3バケットにイベント通知を作成し、メッセージの内容をAmazon SQSキューに公開します。
+										</font></font></li>
+									
+								</ul>
+							</div>
+						
+						<a href="https://www.examtopics.com/exams/amazon/aws-certified-cloudops-engineer-associate-soa-c03/view/" class="btn btn-primary"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">回答例を表示</font></font></a>
+						
+					</div>
+        <!-- Question#4 -->
+					<div class="question-body mt-3 pt-3 border-top" data-id="1012394"><b>質問#164</b>
+						<p class="card-text"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+							
+								ある企業は、大規模なオンプレミスのテープバックアップソリューションを運用しています。同社はAWS Storage Gatewayの利用を開始しました。既存のオンプレミスハードウェアを置き換えるために、テープゲートウェイを構築しました。同社のバックアップエンジニアは、AWSに書き込むはずだったバックアップジョブの一部が「容量不足」エラーで実行に失敗したことに気づきました。</font></font><br><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">同社はこのような失敗が二度と起こらないようにしたいと考えています。また、AWS上に常に十分なテープ容量を確保しておきたいと考えています。</font></font><br><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">クラウドオペレーションエンジニアがこれらの要件を満たすための、最も運用効率の良い方法はどれでしょうか？
+							
+						</font></font></p>
+						
+							
+								<div class="voted-answers-tally d-none">
+									
+										<script id="1012394" type="application/json">[]</script>
+									
+								</div>
+							
+							<div class="question-choices-container">
+								<ul>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="A"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													A.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											1時間ごとに実行され、空き容量のあるテープの数をチェックするAWS Lambda関数を作成します。利用可能なテープの数が一定のしきい値を下回る場合は、追加でプロビジョニングします。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="B"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													B.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+											
+											オンプレミスシステムに Amazon CloudWatch エージェントをインストールします。ログファイルを CloudWatch ロググループにプッシュします。「容量不足」エラーが発生したときにテープを追加する AWS Lambda 関数を作成します。Lambda 関数を起動するメトリックフィルタとメトリックアラームを作成します。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="C"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													C.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+											
+											独自のテープセットを備えた追加のテープゲートウェイを作成します。プライマリテープゲートウェイに関連付けられているテープに空き容量がない場合に、バックアップエンジニアに通知を送信するようにAmazon SNSを設定します。
+										</font></font></li>
+									
+										<li class="multi-choice-item correct-hidden">
+											
+												<span class="multi-choice-letter" data-choice-letter="D"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													D.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+											
+											テープゲートウェイでテープの自動作成を設定します。自動作成設定で、最小テープ数、適切なバーコードプレフィックス、およびテーププールを設定します。
+										</font></font></li>
+									
+								</ul>
+							</div>
+						
+						<a href="https://www.examtopics.com/exams/amazon/aws-certified-cloudops-engineer-associate-soa-c03/view/" class="btn btn-primary"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">回答例を表示</font></font></a>
+						
+					</div>
+        <!-- Question#5 -->
+					<div class="question-body mt-3 pt-3 border-top" data-id="1012395"><b>質問#165</b>
+						<p class="card-text"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+							
+								CloudOps エンジニアは、AWS Organizations 内の組織におけるアカウントのセキュリティを管理します。CloudOps エンジニアは、アカウントが組織に参加する際に、すべてのアカウントに基本構成を適用するソリューションを実装する必要があります。</font></font><br><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">運用上のオーバーヘッドを最小限に抑えつつ、この要件を満たすソリューションはどれでしょうか？
+							
+						</font></font></p>
+						
+							
+								<div class="voted-answers-tally d-none">
+									
+										<script id="1012395" type="application/json">[]</script>
+									
+								</div>
+							
+							<div class="question-choices-container">
+								<ul>
+									
+										<li class="multi-choice-item correct-hidden">
+											
+												<span class="multi-choice-letter" data-choice-letter="A"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													A.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											AWS CloudFormationテンプレートで構成を作成します。StackSetsの自動デプロイ機能を使用して、組織内のすべてのアカウントにテンプレートをデプロイします。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="B"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													B.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+											
+											組織の管理アカウントで AWS Config を有効にします。複数アカウント、複数リージョンのデータ集約を使用します。集約されたリソースのページで結果を確認します。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="C"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													C.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+											
+											組織の管理アカウントにAWS Lambda関数を作成し、リソースを設定します。Lambda関数をクロスアカウントアクセスで設定します。新しいアカウントが検出されたときに関数を実行します。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="D"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													D.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											AWS CloudFormationテンプレートで構成を作成します。新しいアカウントが検出されたときに実行されるAWS Lambda関数を使用して、組織内のすべてのアカウントにテンプレートをデプロイします。
+										</font></font></li>
+									
+								</ul>
+							</div>
+						
+						<a href="https://www.examtopics.com/exams/amazon/aws-certified-cloudops-engineer-associate-soa-c03/view/" class="btn btn-primary"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">回答例を表示</font></font></a>
+						
+					</div>
+        <!-- Question#6 -->
+					<div class="question-body mt-3 pt-3 border-top" data-id="1012396"><b>質問#166</b>
+						<p class="card-text"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+							
+								ある企業は、5 TB の Amazon RDS for MySQL データベースを使用するアプリケーションを AWS 上でホストしています。この企業は、中断できない頻繁なマイクロアップデートを実施しています。データベースの構造変更によって、アプリケーションに問題が発生することがあります。問題が発生すると、企業は自動監視によってすぐに通知を受け取ります。</font></font><br><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">企業は、問題のあるデータベース変更をできるだけ早く元に戻したいと考えています。また、RDS for MySQL から Amazon Aurora MySQL 互換エディションのクラスターへの移行を検討しています。</font></font><br><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">これらの要件を満たすソリューションはどれでしょうか？
+							
+						</font></font></p>
+						
+							
+								<div class="voted-answers-tally d-none">
+									
+										<script id="1012396" type="application/json">[]</script>
+									
+								</div>
+							
+							<div class="question-choices-container">
+								<ul>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="A"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													A.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+											
+											更新開始直前にDBクラスタのスナップショットを作成します。更新が失敗した場合は、DBスナップショットを復元し、アプリケーションを修正して新しいDBクラスタエンドポイントを使用するようにします。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="B"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													B.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											Amazon Route 53 プライベートゾーンに、クラスタエンドポイントを指すデータベースレコードを作成します。更新開始直前に、DB クラスタのスナップショットを作成します。更新が失敗した場合は、DB スナップショットを復元し、それに応じて DNS を変更します。
+										</font></font></li>
+									
+										<li class="multi-choice-item correct-hidden">
+											
+												<span class="multi-choice-letter" data-choice-letter="C"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													C.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											Aurora クラスターを RDS for MySQL データベースから最初に作成または復元する際に、Aurora クラスターのバックトラック機能を有効にします。バックトラックを使用して、データベースを更新開始直前の時点までロールバックします。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="D"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													D.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											Auroraクラスターの前にRDSプロキシを作成します。更新が失敗した場合は、DBスナップショットを復元し、RDSプロキシを変更して新しいDBクラスターエンドポイントを使用するようにします。
+										</font></font></li>
+									
+								</ul>
+							</div>
+						
+						<a href="https://www.examtopics.com/exams/amazon/aws-certified-cloudops-engineer-associate-soa-c03/view/" class="btn btn-primary"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">回答例を表示</font></font></a>
+						
+					</div>
+        <!-- Question#7 -->
+					<div class="question-body mt-3 pt-3 border-top" data-id="1012397"><b>質問#167</b>
+						<p class="card-text"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+							
+								ある企業は、us-east-1リージョンのAmazon EC2インスタンスでウェブサイトをホストしています。同社はウェブサイトをeu-central-1リージョンに拡張する準備を進めていますが、データベースはus-east-1リージョンにのみ残す必要があります。デプロイ後、eu-central-1リージョンのEC2インスタンスはus-east-1リージョンのデータベースに接続できなくなりました。</font></font><br><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">この接続問題を解決するための、最も運用効率の高いソリューションは何でしょうか？
+							
+						</font></font></p>
+						
+							
+								<div class="voted-answers-tally d-none">
+									
+										<script id="1012397" type="application/json">[]</script>
+									
+								</div>
+							
+							<div class="question-choices-container">
+								<ul>
+									
+										<li class="multi-choice-item correct-hidden">
+											
+												<span class="multi-choice-letter" data-choice-letter="A"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													A.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											2つのリージョン間でVPCピアリング接続を作成します。インスタンスのプライベートIPアドレス範囲をデータベースセキュリティグループの受信ルールに追加します。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="B"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													B.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											2つのリージョン間でVPCピアリング接続を作成します。eu-central-1にあるインスタンスのセキュリティグループを、データベースセキュリティグループのアウトバウンドルールに追加します。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="C"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													C.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											2つのリージョン間にVPN接続を作成します。インスタンスのプライベートIPアドレス範囲をデータベースセキュリティグループのアウトバウンドルールに追加します。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="D"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													D.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											2つのリージョン間でVPN接続を作成します。eu-central-1にあるインスタンスのセキュリティグループを、データベースセキュリティグループの受信ルールに追加します。
+										</font></font></li>
+									
+								</ul>
+							</div>
+						
+						<a href="https://www.examtopics.com/exams/amazon/aws-certified-cloudops-engineer-associate-soa-c03/view/" class="btn btn-primary"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">回答例を表示</font></font></a>
+						
+					</div>
+        <!-- Question#8 -->
+					<div class="question-body mt-3 pt-3 border-top" data-id="1012398"><b>質問#168</b>
+						<p class="card-text"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+							
+								ある企業は、AWS Organizations を使用して AWS アカウントを管理しています。同社は、事業部門ごとにコストセンター タグを導入し、コストを追跡してコンプライアンス違反行為を防止する予定です。</font></font><br><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">同社は、コストセンター タグに特定の値が設定されていない限り、ユーザーがそのタグを使用して Amazon EC2 インスタンスを起動できないようにする必要があります。</font></font><br><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">管理上の手間を最小限に抑えつつ、この要件を満たすソリューションはどれでしょうか？
+							
+						</font></font></p>
+						
+							
+								<div class="voted-answers-tally d-none">
+									
+										<script id="1012398" type="application/json">[]</script>
+									
+								</div>
+							
+							<div class="question-choices-container">
+								<ul>
+									
+										<li class="multi-choice-item correct-hidden">
+											
+												<span class="multi-choice-letter" data-choice-letter="A"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													A.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+											
+											組織のコストセンター タグに対してサービス制御ポリシー (SCP) を作成します。ポリシーで指定された値を定義します。作成したポリシーを会社のすべての組織単位 (OU) に添付します。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="B"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													B.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											AWS Systems Manager InventoryでEC2インスタンスのインベントリ収集を設定します。管理対象インスタンスにCostCenterタグをアタッチします。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="C"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													C.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+											
+											会社の各事業部門ごとにAmazonマシンイメージ（AMI）を作成します。インスタンスが起動されたときにタグ付けするユーザーデータスクリプトを含めます。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="D"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													D.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+											
+											ユーザーが EC2 インスタンスを起動したときに AWS Lambda 関数を呼び出す Amazon EventBridge ルールを作成します。Lambda 関数を設定して、各ユーザーの IAM ロールに適切な CostCenter タグを適用するか、タグに指定された値がない場合はインスタンスを終了するようにします。
+										</font></font></li>
+									
+								</ul>
+							</div>
+						
+						<a href="https://www.examtopics.com/exams/amazon/aws-certified-cloudops-engineer-associate-soa-c03/view/" class="btn btn-primary"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">回答例を表示</font></font></a>
+						
+					</div>
+        <!-- Question#9 -->
+					<div class="question-body mt-3 pt-3 border-top" data-id="1012399"><b>質問#169</b>
+						<p class="card-text"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+							
+								CloudOps エンジニアは、Amazon EC2 リソースと Amazon RDS リソースのバックアップ戦略を実装する必要があります。バックアップ戦略は、次の保持要件を満たす必要があります。</font></font><br><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">• 日次バックアップ: 6 日間保持する必要があります</font></font><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">• 週次バックアップ: 4 週間保持する必要があります</font></font><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">• 月次バックアップ: 11 か月保持する必要があります</font></font><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">• 年次バックアップ: 7 年間保持する必要があります</font></font><br><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">これらの要件を最小限の管理作業で満たすバックアップ戦略はどれですか。
+							
+						</font></font></p>
+						
+							
+								<div class="voted-answers-tally d-none">
+									
+										<script id="1012399" type="application/json">[]</script>
+									
+								</div>
+							
+							<div class="question-choices-container">
+								<ul>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="A"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													A.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											Amazon Data Lifecycle Managerを使用して、Amazon EBSスナップショットポリシーを作成します。バックアップが必要な各リソースにタグを作成します。ポリシー内の要件に応じて複数のスケジュールを作成します。適切な頻度と保持期間を設定します。
+										</font></font></li>
+									
+										<li class="multi-choice-item correct-hidden">
+											
+												<span class="multi-choice-letter" data-choice-letter="B"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													B.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											AWS Backup を使用して、各保持要件ごとに、バックアップ頻度を日次、週次、月次、または年次で設定した新しいバックアップ プランを作成します。保持期間を要件に合わせて設定します。バックアップが必要な各リソースにタグを作成します。タグを使用してリソースの割り当てを設定します。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="C"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													C.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											AWS Lambda 関数を作成します。Lambda 関数に、ネイティブツールを使用して Amazon EC2 のファイルシステムのバックアップを取得し、Amazon RDS のデータベースのコピーを作成するようにプログラムします。Lambda 関数を呼び出す Amazon EventBridge ルールを作成します。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="D"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													D.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											Amazon Data Lifecycle Manager を使用して、Amazon EBS スナップショット ポリシーを作成します。バックアップが必要な各リソースにタグを作成します。タグを使用してリソースの割り当てを設定します。ポリシー内の要件に応じて複数のスケジュールを作成します。適切な頻度と保持期間を設定します。Amazon RDS で、必要な DB インスタンスの自動バックアップを有効にします。
+										</font></font></li>
+									
+								</ul>
+							</div>
+						
+						<a href="https://www.examtopics.com/exams/amazon/aws-certified-cloudops-engineer-associate-soa-c03/view/" class="btn btn-primary"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">回答例を表示</font></font></a>
+						
+					</div>
+        <!-- Question#10 -->
+					<div class="question-body mt-3 pt-3 border-top" data-id="1012400"><b>質問#170</b>
+						<p class="card-text"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+							
+								あるeコマース企業は、Amazon ECS上でマイクロサービスアプリケーションを運用しています。顧客がアプリケーションを通じて購入手続きを完了しようとした際に、レイテンシが高くなる場合があります。</font></font><br><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">クラウドオペレーションエンジニアは、複数のサービスにわたる個々のトランザクションを追跡し、レイテンシが発生している箇所を特定できるソリューションを必要としています。このソリューションは、コードの変更を最小限に抑え、サービス間の依存関係を視覚的に表現できる必要があります。</font></font><br><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">これらの要件を満たすソリューションはどれでしょうか？
+							
+						</font></font></p>
+						
+							
+								<div class="voted-answers-tally d-none">
+									
+										<script id="1012400" type="application/json">[]</script>
+									
+								</div>
+							
+							<div class="question-choices-container">
+								<ul>
+									
+										<li class="multi-choice-item correct-hidden">
+											
+												<span class="multi-choice-letter" data-choice-letter="A"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													A.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											AWS X-Rayデーモンをサイドカーコンテナとしてセットアップします。X-Ray SDKを使用してアプリケーションコードを計測します。サービスマップを使用してリクエストフローを可視化し、レイテンシを特定します。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="B"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													B.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											Amazon CloudWatchエージェントをECSコンテナ上にサイドカーコンテナとして構成します。各サービスごとにカスタムメトリクスを作成します。応答時間を監視するためにCloudWatchダッシュボードを設定します。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="C"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													C.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											Amazon VPC Flow Logs を使用して、ECS コンテナ上で実行されるマイクロサービスのログを収集します。ネットワークトラフィックを監視し、サービスマップを使用してマイクロサービス間の遅延を特定します。
+										</font></font></li>
+									
+										<li class="multi-choice-item">
+											
+												<span class="multi-choice-letter" data-choice-letter="D"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+													D.
+												</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> 
+											
+											Amazon CloudWatch Container Insightsをサイドカーコンテナとして使用し、コンテナのメトリクスを収集します。応答時間を監視し、リクエストフローを視覚化してレイテンシを特定します。
+										</font></font></li>
+									
+								</ul>
+							</div>
+						
+						<a href="https://www.examtopics.com/exams/amazon/aws-certified-cloudops-engineer-associate-soa-c03/view/" class="btn btn-primary"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">回答例を表示</font></font></a>
+						
+					</div>
+
+      </div>
+      <!-- jquery latest version -->
+      <script src="./161-170_files/jquery.mi"></script>
+      <!-- main js -->
+      <script src="./161-170_files/main.js"></script>
+      <script type="text/javascript" src="./161-170_files/examview"></script>
+    </div>
+  </div><div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate" style="display: none; border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: &#39;Google Sans&#39;, Arial, sans-serif;" data-id=""><div id="goog-gt-vt" class="VIpgJd-yAWNEb-hvhgNd"><div class="VIpgJd-yAWNEb-hvhgNd-Ud7fr"><img src="./161-170_files/24px.svg" width="24" height="24" alt=""><div class=" VIpgJd-yAWNEb-hvhgNd-IuizWc-i3jM8c " dir="ltr">原文</div></div><div class="VIpgJd-yAWNEb-hvhgNd-k77Iif"><div id="goog-gt-original-text" class="VIpgJd-yAWNEb-nVMfcd-fmcmS VIpgJd-yAWNEb-hvhgNd-axAV1"></div></div><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid ltr"><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid-B7I4Od ltr" dir="ltr"><div class="VIpgJd-yAWNEb-hvhgNd-UTujCb">この翻訳を評価してください</div><div class="VIpgJd-yAWNEb-hvhgNd-eO9mKe">いただいたフィードバックは Google 翻訳の改善に役立てさせていただきます</div></div><div class="VIpgJd-yAWNEb-hvhgNd-xgov5 ltr"><button id="goog-gt-thumbUpButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="良い翻訳" aria-label="良い翻訳" aria-pressed="false"><span id="goog-gt-thumbUpIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7H2v13h16c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM7 18H4V9h3v9zm14-7l-3 7H9V8l4.34-4.34L12 9h9v2z"></path></svg></span><span id="goog-gt-thumbUpIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7v13h11c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM5 7H1v13h4V7z"></path></svg></span></button><button id="goog-gt-thumbDownButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="悪い翻訳" aria-label="悪い翻訳" aria-pressed="false"><span id="goog-gt-thumbDownIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7h5V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zM17 6h3v9h-3V6zM3 13l3-7h9v10l-4.34 4.34L12 15H3v-2z"></path></svg></span><span id="goog-gt-thumbDownIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zm16 0h4V4h-4v13z"></path></svg></span></button></div></div><div id="goog-gt-votingHiddenPane" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><form id="goog-gt-votingForm" action="file://translate.googleapis.com/translate_voting?client=te_lib" method="post" target="votingFrame" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><input type="text" name="sl" id="goog-gt-votingInputSrcLang"><input type="text" name="tl" id="goog-gt-votingInputTrgLang"><input type="text" name="query" id="goog-gt-votingInputSrcText"><input type="text" name="gtrans" id="goog-gt-votingInputTrgText"><input type="text" name="vote" id="goog-gt-votingInputVote"></form><iframe name="votingFrame" frameborder="0" src="./161-170_files/saved_resource.html"></iframe></div></div></div>
+
+
+</body></html>

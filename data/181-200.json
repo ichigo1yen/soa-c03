@@ -1,0 +1,530 @@
+{
+  "title": "問題 181-200",
+  "questions": [
+    {
+      "id": "181",
+      "text": "企業はAWS CloudFormationテンプレートを使用してAmazon EC2インスタンスとAmazon RDS DBインスタンスをプロビジョニングしています。CloudOpsエンジニアは、EC2インスタンスが起動する前にDBインスタンスが作成されるようテンプレートを更新する必要があります。何を行うべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "テンプレートにWaitConditionを追加し、EC2インスタンスのユーザーデータスクリプトを更新して、EC2インスタンスの起動後にシグナルを送信する。"
+        },
+        {
+          "letter": "B",
+          "text": "EC2インスタンスリソースにDependsOn属性を追加し、RDSリソースの論理名を指定する。"
+        },
+        {
+          "letter": "C",
+          "text": "テンプレート内のリソースの順序を変更し、RDSリソースをEC2インスタンスリソースより前に記載する。"
+        },
+        {
+          "letter": "D",
+          "text": "複数のテンプレートを作成し、AWS CloudFormation StackSetsを使用して、1つ目のスタックが完了してから2つ目のスタックを作成する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "182",
+      "text": "企業はAmazon S3バケットに機密データを保存しています。S3バケットへのすべてのアクセス試行をログに記録する必要があります。また、リスクチームは削除イベントについて即時通知を受け取る必要があります。要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "監査ログ用にS3サーバーアクセスログを有効にする。S3バケットのAmazon SNS通知を設定し、アラート対象のイベントタイプとしてDeleteObjectを選択する。"
+        },
+        {
+          "letter": "B",
+          "text": "監査ログ用にS3サーバーアクセスログを有効にする。アラートシステム用のEC2インスタンスを起動し、cronジョブで毎日アクセスログをダウンロードしてDeleteObjectイベントを検索する。"
+        },
+        {
+          "letter": "C",
+          "text": "監査ログにAmazon CloudWatch Logsを使用し、アラートシステムにAmazon SNS通知付きのCloudWatchアラームを使用する。"
+        },
+        {
+          "letter": "D",
+          "text": "監査ログにAmazon CloudWatch Logsを使用し、アラートシステム用のEC2インスタンスを起動する。cronジョブで毎日項目一覧を前日の一覧と比較し、項目がなくなった場合に通知する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "183",
+      "text": "企業はAmazon S3バケットにアップロードされる写真の処理を自動化したいと考えています。CloudOpsエンジニアは、新しい写真がアップロードされたら直ちに2分間の処理ワークフローを起動する必要があります。また、ネイティブなS3通知先を使用してワークフローを開始する必要があります。最小限の運用オーバーヘッドで要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Amazon S3イベント通知をAmazon SQSキューへ送信し、AWS Lambda関数を呼び出して処理する。"
+        },
+        {
+          "letter": "B",
+          "text": "Amazon S3イベント通知を設定し、各オブジェクトのアップロード時にAWS Lambda関数を呼び出す。"
+        },
+        {
+          "letter": "C",
+          "text": "Amazon S3イベント通知をAmazon EventBridgeバスへ発行し、EventBridgeバスからAWS Lambda関数へルーティングする。"
+        },
+        {
+          "letter": "D",
+          "text": "Amazon S3イベント通知を設定し、AWS Step Functionsステートマシンへ通知して変換処理を開始する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "184",
+      "text": "企業はAWS Cloudでマルチアカウント構成を使用しています。共通リソース用の共有アカウントと、新しいアプリケーション開発用の開発アカウントがあります。DNS管理にはAmazon Route 53を使用し、すべてのRoute 53ホストゾーンを共有アカウントから管理しています。開発アカウントにデプロイされたアプリケーション用に新しいSSL/TLS証明書を取得する必要があります。何を行うべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "共有アカウントに新しいAWS KMSキーを作成し、開発アカウントのrootプリンシパルに読み取りアクセスを与えるキーポリシーを設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "共有アカウントからAWS Certificate Manager（ACM）を使用して新しい証明書をリクエストし、共有アカウントのRoute 53を使用して該当するホストゾーンに検証用レコードセットを作成する。"
+        },
+        {
+          "letter": "C",
+          "text": "開発アカウントからAWS Certificate Manager（ACM）を使用して新しい証明書をリクエストし、共有アカウントのRoute 53を使用して該当するホストゾーンに検証用レコードセットを作成する。"
+        },
+        {
+          "letter": "D",
+          "text": "開発アカウントに新しいAWS KMSキーを作成し、共有アカウントのrootプリンシパルに読み取りアクセスを与えるキーポリシーを設定する。共有アカウントのRoute 53で、KMSキーのARNを参照する検証用レコードセットを作成する。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "185",
+      "text": "小売企業はus-east-1リージョンで主要なeコマースWebアプリケーションを実行しており、us-west-2リージョンに完全に構成されたディザスタリカバリ（DR）環境があります。プライマリ環境が正常でなくなった場合、DR環境へ自動フェイルオーバーする必要があります。Amazon Route 53をどのように構成すべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "プライマリWebアプリケーションエンドポイントを監視するRoute 53ヘルスチェックを作成する。プライマリ環境とセカンダリ環境をそれぞれ指すプライマリおよびセカンダリレコードを持つフェイルオーバールーティングポリシーを設定する。プライマリレコードにヘルスチェックを関連付け、セカンダリレコードをフェイルオーバーレコードとして設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "2つのRoute 53レイテンシーベースルーティングレコードを作成し、それぞれを各環境へ向ける。CloudWatchアラームでプライマリ環境を監視し、プライマリが異常になったときEventBridgeルールでレイテンシールーティングの重みを更新する。"
+        },
+        {
+          "letter": "C",
+          "text": "Route 53ジオロケーションルーティングポリシーを設定して、デフォルトですべてのグローバルトラフィックをプライマリリージョンへ送る。Route 53 DNS Firewallルールでアプリケーション障害を検出し、ジオロケーションルーティングを自動更新してセカンダリリージョンへリダイレクトする。"
+        },
+        {
+          "letter": "D",
+          "text": "両リージョンにRoute 53 Resolver DNS Firewallルールグループをデプロイする。CloudWatchアラームでプライマリ環境を監視し、障害発生時にEventBridgeルールでDNS Firewallアクションを実行してDR環境へクエリをリダイレクトする。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "186",
+      "text": "CloudOpsエンジニアは、新しいAmazon CloudFrontディストリビューションのデータ転送およびレイテンシーパフォーマンスを評価するために負荷テストを実施する必要があります。要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "単一の地理的リージョンからクライアントリクエストを送信する。各クライアントが同一のDNSリクエストを行うよう負荷テストを設定し、DNSが返すIPアドレスにクライアントリクエストを集中させる。"
+        },
+        {
+          "letter": "B",
+          "text": "単一の地理的リージョンからクライアントリクエストを送信する。各クライアントが独立したDNSリクエストを行うよう設定し、DNSが返す複数のIPアドレスにクライアントリクエストを分散する。"
+        },
+        {
+          "letter": "C",
+          "text": "複数の地理的リージョンからクライアントリクエストを送信する。各クライアントが同一のDNSリクエストを行うよう設定し、DNSが返すIPアドレスにクライアントリクエストを集中させる。"
+        },
+        {
+          "letter": "D",
+          "text": "複数の地理的リージョンからクライアントリクエストを送信する。各クライアントが独立したDNSリクエストを行うよう設定し、DNSが返す複数のIPアドレスにクライアントリクエストを分散する。"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "187",
+      "text": "企業はグローバル展開を進めており、Amazon EBSボリューム上のデータを別のAWSリージョンへバックアップする必要があります。データを保存するEBSボリュームの大半は暗号化されていますが、一部は暗号化されていません。すべてのEBSボリュームのバックアップデータを暗号化する必要があります。管理オーバーヘッドを最小限にして要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Amazon Data Lifecycle Manager（Amazon DLM）でライフサイクルポリシーを設定し、EBSボリュームのスナップショットを作成してクロスリージョンバックアップを有効にする。AWS KMSを使用してスナップショットのコピーを暗号化する。"
+        },
+        {
+          "letter": "B",
+          "text": "EBSボリュームのポイントインタイムスナップショットを作成する。スナップショットの状態がCOMPLETEDになったら別リージョンへコピーし、EncryptedパラメータをFalseに設定する。"
+        },
+        {
+          "letter": "C",
+          "text": "EBSボリュームのポイントインタイムスナップショットを作成し、サーバー側暗号化を使用するAmazon S3バケットへコピーする。S3バケットでS3 Cross-Region Replicationを有効にする。"
+        },
+        {
+          "letter": "D",
+          "text": "PythonランタイムのAWS Lambda関数をスケジュール実行し、EBSボリュームのスナップショットを作成、暗号化されていないスナップショットを暗号化し、別リージョンへコピーする。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "188",
+      "text": "CloudOpsエンジニアは、既存のAWS Lambda関数から既存のAmazon S3バケットへアクセスできるようにする必要があります。Lambda関数とS3バケット間のトラフィックでパブリックIPアドレスを使用してはいけません。Lambda関数はVPC内で実行されるよう構成されています。要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Lambda VPCとS3バケット間でVPC共有を構成する。"
+        },
+        {
+          "letter": "B",
+          "text": "Lambda VPCにTransit Gatewayをアタッチして、Lambda関数からS3バケットへ接続できるようにする。"
+        },
+        {
+          "letter": "C",
+          "text": "NATゲートウェイを作成し、Lambda関数が実行されるサブネットに関連付ける。"
+        },
+        {
+          "letter": "D",
+          "text": "S3インターフェイスエンドポイントを作成し、Lambda関数が新しいS3 DNS名を使用するよう変更する。"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "189",
+      "text": "企業はAmazon EC2インスタンス上でアプリケーションを実行しています。アプリケーションはAmazon RDS for MySQL Single-AZ DBインスタンスにデータを保存し、DBインスタンスへのリクエストには読み取りと書き込みの両方が含まれます。CloudOpsエンジニアは、アプリケーションのダウンタイムを最小限に抑えながらDBインスタンスのフェイルオーバーを実現する必要があります。要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "DBインスタンスをMulti-AZ DBインスタンス配置に変更する。"
+        },
+        {
+          "letter": "B",
+          "text": "DBインスタンスと同じアベイラビリティーゾーンにリードレプリカを追加する。"
+        },
+        {
+          "letter": "C",
+          "text": "DBインスタンスを、最小キャパシティ2・希望キャパシティ2のAuto Scalingグループに追加する。"
+        },
+        {
+          "letter": "D",
+          "text": "DBインスタンスの前段にRDS Proxyを構成する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "190",
+      "text": "企業はAWS上でWebアプリケーションを構築しています。Amazon CloudFrontを使用し、ドメイン名はwww.example.comです。CloudFrontへのすべてのトラフィックを転送中に暗号化する必要があります。www.example.com用のSSL証明書はすでにAWS Certificate Manager（ACM）でプロビジョニングされています。CloudOpsエンジニアがトラフィックを転送中に暗号化するために行うべき手順の組み合わせはどれですか？（2つ選択）",
+      "type": "multiple",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "CloudFrontディストリビューションの各キャッシュビヘイビアで、Viewer Protocol PolicyをHTTPからHTTPSへリダイレクトするよう変更する。"
+        },
+        {
+          "letter": "B",
+          "text": "各キャッシュビヘイビアのViewer Protocol PolicyをHTTPとHTTPSの両方を許可するよう変更する。"
+        },
+        {
+          "letter": "C",
+          "text": "CloudFrontディストリビューションにwww.example.comのAlternate Domain Name（CNAME）を入力し、カスタムSSL証明書を選択する。"
+        },
+        {
+          "letter": "D",
+          "text": "CloudFrontディストリビューション用のAWS WAF Web ACLを構成する。"
+        },
+        {
+          "letter": "E",
+          "text": "CloudFrontオリジン用にCloudFront Origin Shieldを構成する。"
+        }
+      ],
+      "correct": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "id": "191",
+      "text": "企業はAmazon EC2インスタンス上で非本番アプリケーションを実行しています。インスタンスにはAmazon EBSボリュームがアタッチされています。インスタンスのヘルスチェックが失敗するたびに、CloudOpsエンジニアはインスタンスを再起動して問題を解決しています。ヘルスチェック失敗後にインスタンスを自動再起動するソリューションを実装する必要があります。CloudOpsエンジニアはAmazon EventBridge用のサービスリンクIAMロールを作成しました。自動化要件を満たすため、次に何をすべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "HealthyHostCountメトリクスのAmazon CloudWatchアラームを作成し、インスタンスに一致する検索式を含める。メトリクス値が0より大きい場合にEC2再起動アクションを実行するよう設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "StatusCheckFailed_InstanceメトリクスのCloudWatchアラームを作成し、インスタンスに一致する検索式を含める。メトリクス値が0より大きい場合にEC2リカバリアクションを実行するよう設定する。"
+        },
+        {
+          "letter": "C",
+          "text": "StatusCheckFailed_InstanceメトリクスのCloudWatchアラームを作成し、ディメンションとしてインスタンスIDを使用する。メトリクス値が0より大きい場合にEC2再起動アクションを実行するよう設定する。"
+        },
+        {
+          "letter": "D",
+          "text": "インスタンスの詳細モニタリングを設定する。StatusCheckFailed_InstanceメトリクスのCloudWatchアラームを作成し、EC2 AMI IDをディメンションとして使用する。メトリクス値が0より大きい場合にEC2インスタンス停止操作、その後開始操作を実行するよう設定する。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "192",
+      "text": "コンプライアンスチームは、Amazon RDS DBインスタンスのすべての管理者パスワードを少なくとも年1回変更することを要求しています。最も運用効率の高い方法で要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "データベース認証情報をAWS Secrets Managerに保存し、365日ごとの自動ローテーションを設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "データベース認証情報をRDSパラメータグループのパラメータとして保存し、365日ごとにパスワードをローテーションするデータベーストリガーを作成する。"
+        },
+        {
+          "letter": "C",
+          "text": "データベース認証情報を非公開Amazon S3バケットに保存し、AWS Lambda関数を365日ごとにスケジュールして新しい認証情報セットを生成する。"
+        },
+        {
+          "letter": "D",
+          "text": "データベース認証情報をAWS Systems Manager Parameter StoreのSecureStringパラメータとして保存し、365日ごとの自動ローテーションを設定する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "193",
+      "text": "企業はAWS Organizationsを使用して複数のAWSアカウントを管理しています。企業ポリシーでは、顧客データの保存・処理に使用できるAWSリージョンを特定のリージョンだけに制限しています。CloudOpsエンジニアは、社内の誰もが許可されていないリージョンでAmazon EC2インスタンスをプロビジョニングできないようにする必要があります。要件を満たす最も運用効率の高いソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "すべてのリージョンでAWS CloudTrailを設定してすべてのAPIアクティビティを記録する。許可されていない各リージョンでec2:RunInstancesイベント用のAmazon EventBridgeルールを作成し、AWS Lambdaで起動されたEC2インスタンスを終了する。"
+        },
+        {
+          "letter": "B",
+          "text": "各AWSアカウントで、リージョン条件を使用して許可されていないすべてのリージョンでec2:RunInstancesアクションを拒否する管理IAMポリシーを作成し、各アカウントのすべてのIAMグループにアタッチする。"
+        },
+        {
+          "letter": "C",
+          "text": "各AWSアカウントで、リージョン条件を使用して許可されていないすべてのリージョンでec2:RunInstancesアクションを拒否するIAM権限境界ポリシーを作成し、各アカウントのすべてのIAMユーザーにアタッチする。"
+        },
+        {
+          "letter": "D",
+          "text": "AWS Organizationsで、許可されていないすべてのリージョンでec2:RunInstancesアクションを拒否するサービスコントロールポリシー（SCP）を作成し、組織のルートレベルにアタッチする。"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "194",
+      "text": "企業はAWS Organizationsの組織内に複数のAWSアカウントを持っています。あるアカウントにAWS Lambda関数を構築しており、そのLambda関数は別のアカウントで実行中のAmazon EC2インスタンス一覧を取得する必要があります。最も安全にアクセスを提供できるソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "EC2インスタンスが実行されているアカウントにIAMユーザーを作成し、アクセスキーを取得する。その認証情報をLambda関数のアカウントのAWS Systems Manager Parameter Storeに保存し、Lambda関数がアクセスキーとシークレットキーを使用するよう設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "Lambda関数の実行ロールに、EC2インスタンスが実行されているアカウントのクロスアカウントIAMロールを引き受ける権限を設定する。クロスアカウントロールの信頼ポリシーを変更してLambda関数によるロール引き受けを許可し、Lambda関数のコードにAWS STS AssumeRole API操作を追加する。"
+        },
+        {
+          "letter": "C",
+          "text": "組織の管理アカウントからOrganizations CreatePolicy API操作を呼び出して新しいSCPを作成し、lambda:InvokeFunction権限を付与して組織のルートに割り当てる。"
+        },
+        {
+          "letter": "D",
+          "text": "Lambda関数用の新しいリソースベースポリシーを作成し、Principalを「*」、Actionをlambda:InvokeFunctionに設定する。aws:PrincipalOrgID条件キーの値が組織IDと一致した場合にアクセスを許可する条件を作成する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "195",
+      "text": "開発チームは、重大度スコアが1で、countが2のAmazon Macie検出結果を検索するAmazon EventBridgeルールを設定しています。開発チームは次のイベントを受信しました。\n=========================\n{\n    \"detail-type\": \"Macie Finding\",\n    \"source\": \"aws.macie\",\n    \"detail\": {\n        \"title\": \"Encryption is disabled for the S3 bucket\",\n        \"severity\": {\n            \"score\": 1,\n            \"description\": \"Low\"\n        },\n        \"count\": 2,\n・・・\n}\n=========================\n重大度スコアが1でcountが2のイベントを検出するEventBridgeイベントパターンはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "{\n    \"source\": [\"aws.macie\"],\n    \"detail-type\": [\"Macie Finding\"],\n    \"detail\": {\n        \"severity\": {\n            \"score\": [1]\n        },\n        \"count\": [2]\n    }\n}"
+        },
+        {
+          "letter": "B",
+          "text": "{\n    \"source\": [\"aws.macie\"],\n    \"detail-type\": [\"Macie Finding\"],\n    \"detail\": {\n        \"severity\": {\n            \"score\": [1]\n        } \"or\"\n        \"count\": [2]\n    }\n}"
+        },
+        {
+          "letter": "C",
+          "text": "{\n    \"source\": [\"aws.macie\"],\n    \"detail-type\": [\"Macie Finding\"],\n    \"detail\": {\n        \"severity\":\n            \"score\": [1]\n        } \"$or\"\n        \"count\": [2]\n    }\n}"
+        },
+        {
+          "letter": "D",
+          "text": "{\n    \"source\": [\"aws.macie\"],\n    \"detail-type\": [\"Macie Finding\"],\n    \"detail\": {\n        \"severity\":\n            \"score\": [1], \"$or\", \"count\": [2]\n    }\n}"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "196",
+      "text": "アプリケーションは、デフォルトのDHCPオプションセットを使用するVPC内のAmazon EC2インスタンスで実行されています。アプリケーションは、DNS名mssql.example.comを持つオンプレミスのMicrosoft SQL Serverデータベースへ接続しますが、データベースのDNS名を解決できません。この問題を解決するソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Amazon Route 53 Resolverインバウンドエンドポイントを作成する。ドメインexample.comのフォワーディングルールを追加し、そのルールをVPCに関連付ける。"
+        },
+        {
+          "letter": "B",
+          "text": "Amazon Route 53 Resolverインバウンドエンドポイントを作成する。ドメインexample.comのシステムルールを追加し、そのルールをVPCに関連付ける。"
+        },
+        {
+          "letter": "C",
+          "text": "Amazon Route 53 Resolverアウトバウンドエンドポイントを作成する。ドメインexample.comのフォワーディングルールを追加し、そのルールをVPCに関連付ける。"
+        },
+        {
+          "letter": "D",
+          "text": "Amazon Route 53 Resolverアウトバウンドエンドポイントを作成する。ドメインexample.comのシステムルールを追加し、そのルールをVPCに関連付ける。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "197",
+      "text": "企業はAWS Lambda関数を使用してAmazon S3バケットへのユーザーアップロードを処理しています。Lambda関数はAmazon S3 PutObjectイベントに応答して実行されます。CloudOpsエンジニアはLambda関数の監視を設定し、イベントの処理に10秒を超えた場合にAmazon SNSトピックを通じて通知を受け取りたいと考えています。要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Lambda関数のAmazon CloudWatchログを収集し、ログからPostRuntimeExtensionsDurationメトリクスを抽出するメトリクスフィルターを作成する。関数の実行時間が10秒を超えたときSNSトピックへ通知するCloudWatchアラームを作成する。"
+        },
+        {
+          "letter": "B",
+          "text": "Lambda関数のAmazon CloudWatchメトリクスを収集して関数の実行時間を取得する。実行時間が10秒を超えたときSNSトピックへ通知するCloudWatchアラームを作成する。"
+        },
+        {
+          "letter": "C",
+          "text": "Lambda関数の実行時間を取得するCloudWatchメトリクスフィルターを設定する。関数のタイムアウトを10秒に設定し、関数がタイムアウトした場合にCloudOpsエンジニアへ通知するSNSサブスクリプションを作成する。"
+        },
+        {
+          "letter": "D",
+          "text": "CloudWatch Logs Insightsを使用してLambdaログから関数の実行時間をクエリし、クエリ結果に基づくCloudWatchアラームを設定する。実行時間が10秒を超えたときSNSで通知する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "198",
+      "text": "企業は最近Savings Plansを購入しました。ある日のSavings Plansの利用率が90%を下回った場合にメール通知を受け取りたいと考えています。要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "AWS Trusted AdvisorのSavings Planチェックを監視するAmazon CloudWatchアラームを作成し、利用率が90%を下回った日のメール通知用にAmazon SQSキューを設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "CloudWatchのAWS/SavingsPlans名前空間にあるSavingsPlansUtilizationメトリクスを監視するAmazon CloudWatchアラームを作成し、利用率が90%を下回った日のメール通知用にAmazon SQSキューを設定する。"
+        },
+        {
+          "letter": "C",
+          "text": "Savings Plansの1日あたりの利用率を監視するSavings Plansアラートを作成し、利用率が90%を下回った日のメール通知用にAmazon SNSトピックを設定する。"
+        },
+        {
+          "letter": "D",
+          "text": "AWS Budgetsを使用してSavings Plansの予算を作成し、日次利用率を追跡する。利用率が90%を下回った日のメール通知用にAmazon SNSトピックを設定する。"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "199",
+      "text": "企業のeコマースアプリケーションは、Application Load Balancer（ALB）の背後にあるAmazon EC2インスタンスで実行されています。インスタンスはAuto Scalingグループにあります。顧客からWebサイトが時々停止するという報告があります。停止時には、Webサイトは顧客のブラウザにHTTP 500（サーバーエラー）ステータスメッセージを返します。Auto ScalingグループのヘルスチェックはEC2ステータスチェックに設定されており、インスタンスは正常です。問題を解決するソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "ALBをNetwork Load Balancerに置き換える。"
+        },
+        {
+          "letter": "B",
+          "text": "Auto ScalingグループにElastic Load Balancing（ELB）ヘルスチェックを追加する。"
+        },
+        {
+          "letter": "C",
+          "text": "ALBのターゲットグループ設定を更新し、セッションアフィニティ（スティッキーセッション）を有効にする。"
+        },
+        {
+          "letter": "D",
+          "text": "すべてのインスタンスにAmazon CloudWatchエージェントをインストールし、エージェントでインスタンスを再起動するよう設定する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "200",
+      "text": "企業は新しいビデオオンデマンド（VOD）アプリケーションを作成しました。アプリケーションはApplication Load Balancer（ALB）の背後にあるAmazon EC2インスタンス群で実行されています。Amazon CloudFrontディストリビューションを設定し、ALBをオリジンにしています。アプリケーション需要の増加に伴い、すべての動画ファイルを中央のAmazon S3バケットへ移行したいと考えています。CloudOpsエンジニアは、動画ファイルをAmazon S3へ移行した後もエッジロケーションでキャッシュできるようにする必要があります。要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "CloudFrontでX-Forwarded-Forヘッダーをオリジンへ送信するよう設定し、動画リクエストをALBではなくAmazon S3へリダイレクトする。"
+        },
+        {
+          "letter": "B",
+          "text": "URLパスパターンの一致に基づいてAmazon S3を新しいオリジンとしてルーティングする、新しいCloudFrontキャッシュビヘイビアを設定する。"
+        },
+        {
+          "letter": "C",
+          "text": "カスタムポリシーを使用してCloudFrontディストリビューションでURL署名を設定し、動画ファイルが署名付きURL経由でのみアクセスされるようにする。"
+        },
+        {
+          "letter": "D",
+          "text": "CloudFrontオリジングループを設定し、障害時に接続試行をセカンダリオリジンへ向けるために必要なHTTPステータスコードを指定する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    }
+  ]
+}

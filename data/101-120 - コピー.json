@@ -1,0 +1,535 @@
+{
+  "title": "問題 101-120",
+  "questions": [
+    {
+      "id": "101",
+      "text": "企業は、注文、フルフィルメント、請求などの業務を実行するために、多数のLinuxベースAmazon EC2インスタンスを使用しています。企業はAWS Systems Managerを使用してEC2インスタンスを管理しています。企業はSystems Manager Agent（SSM Agent）が常に最新バージョンになるようにする必要があります。\nこの要件を最も運用効率よく満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Systems Manager Fleet Managerで「Auto update SSM Agent」設定を有効にする。"
+        },
+        {
+          "letter": "B",
+          "text": "GitHubでSSM Agentの通知を購読し、通知イベントからAmazon SNSトピックを呼び出すように設定する。SNSトピックからカスタムAWS Lambda関数を実行し、Systems Manager Run Command APIを使用してSSM Agentを更新する。"
+        },
+        {
+          "letter": "C",
+          "text": "Systems Manager Patch Managerで「Auto update SSM Agent」設定を有効にする。"
+        },
+        {
+          "letter": "D",
+          "text": "GitHubでSSM Agentの通知を購読し、通知イベントからAmazon SNSトピックを呼び出すように設定する。SNSトピックからカスタムAWS Lambda関数を実行し、Systems Manager Automationドキュメントを使用してSSM Agentを更新する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "102",
+      "text": "CloudOpsエンジニアは、アプリケーションのインスタンスメトリクスを毎分収集する監視システムを実装する必要があります。アプリケーションは、高可用性のAmazon EC2インスタンス2台で稼働しています。監視システムは、メトリクスが事前定義したしきい値を超えたときにメールアラートを送信する必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "AWS Health Dashboardを使用してインスタンスメトリクスを取得し、Amazon EventBridgeでメトリクスの変化を検出・処理してメールアラートを送信する。"
+        },
+        {
+          "letter": "B",
+          "text": "AWS CloudTrailを使用してインスタンスを監視し、ログをAmazon S3バケットへコピーする。AWS Lambda関数を設定し、S3バケットのログに基づいてメールアラートを送信する。"
+        },
+        {
+          "letter": "C",
+          "text": "Amazon CloudWatchの基本モニタリングを使用してインスタンスメトリクスを取得し、Amazon SNSを使用してメールアラートを送信するCloudWatchアラームを設定する。"
+        },
+        {
+          "letter": "D",
+          "text": "Amazon CloudWatchの詳細モニタリングを使用してインスタンスメトリクスを取得し、Amazon SNSを使用してメールアラートを送信するCloudWatchアラームを設定する。"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "103",
+      "text": "企業は、Application Load Balancer（ALB）を使用してAmazon EC2上でホストしているグローバルユーザー向けWebサイトを運用しています。Webサーバーの負荷を軽減するため、CloudOpsエンジニアはALBをオリジンとするAmazon CloudFrontディストリビューションを設定しました。1週間監視したところ、リクエストは依然としてALBから処理されており、Webサーバーの負荷に変化がありません。\nこの問題の原因として考えられるものはどれですか？（2つ選択）",
+      "type": "multiple",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "CloudFrontでALBがオリジンアクセスアイデンティティとして設定されていない。"
+        },
+        {
+          "letter": "B",
+          "text": "DNSがCloudFrontディストリビューションではなくALBを指している。"
+        },
+        {
+          "letter": "C",
+          "text": "ALBのセキュリティグループがCloudFrontからのインバウンドトラフィックを許可していない。"
+        },
+        {
+          "letter": "D",
+          "text": "CloudFrontディストリビューションのデフォルト、最小、最大のTime to Live（TTL）がすべて0秒に設定されている。"
+        },
+        {
+          "letter": "E",
+          "text": "ALBに関連付けられたターゲットグループでスティッキーセッションが設定されている。"
+        }
+      ],
+      "correct": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "id": "104",
+      "text": "企業は、システム全体をAWS上で運用しており、外部監査を受けています。CloudOpsエンジニアは、AWSが管理するインフラストラクチャについてPayment Card Industry Data Security Standard（PCI DSS）への準拠を示す文書を提出する必要があります。\nこの要件を満たすために、CloudOpsエンジニアはどのアクションを実行すべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "AWS Artifactポータルから該当するレポートをダウンロードし、監査人に提出する。"
+        },
+        {
+          "letter": "B",
+          "text": "AWS CloudTrailのログファイルを完全なコピーでダウンロードし、監査人に提出する。"
+        },
+        {
+          "letter": "C",
+          "text": "Amazon CloudWatch Logsを完全なコピーでダウンロードし、監査人に提出する。"
+        },
+        {
+          "letter": "D",
+          "text": "監査人に本番AWSアカウントへの管理アクセスを提供し、監査人自身に準拠状況を確認してもらう。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "105",
+      "text": "CloudOpsエンジニアはAWS CloudFormationを使用して、本番VPCにサーバーレスアプリケーションをデプロイしました。アプリケーションはAWS Lambda関数、Amazon DynamoDBテーブル、Amazon API Gateway APIで構成されています。CloudOpsエンジニアは、DynamoDBテーブルを削除せずにAWS CloudFormationスタックを削除する必要があります。\nAWS CloudFormationスタックを削除する前に、どのアクションを実行すべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "AWS CloudFormationスタックのDynamoDBリソースにRetain削除ポリシーを追加する。"
+        },
+        {
+          "letter": "B",
+          "text": "AWS CloudFormationスタックのDynamoDBリソースにSnapshot削除ポリシーを追加する。"
+        },
+        {
+          "letter": "C",
+          "text": "AWS CloudFormationスタックで終了保護を有効にする。"
+        },
+        {
+          "letter": "D",
+          "text": "アプリケーションのIAMポリシーに、dynamodb:DeleteTableアクションを拒否するDenyステートメントを追加する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "106",
+      "text": "CloudOpsエンジニアはAWS Organizationsの組織内にある多数のAWSメンバーアカウントのポリシーを管理しています。他チームの管理者はメンバーアカウントのrootユーザー認証情報にアクセスできます。CloudOpsエンジニアは、管理者を含むすべてのチームがAmazon DynamoDBを使用できないようにする必要があります。このソリューションは、他のAWSサービスへのアクセス能力には影響を与えてはいけません。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "すべてのメンバーアカウントで、rootユーザーを含むすべてのユーザーについて、すべてのDynamoDBリソースへのアクセスを拒否するIAMポリシーを設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "管理アカウントで、すべてのDynamoDBアクションを拒否するサービスコントロールポリシー（SCP）を作成し、組織のルートに適用する。"
+        },
+        {
+          "letter": "C",
+          "text": "すべてのメンバーアカウントで、rootユーザーを含むすべてのユーザーにAmazonDynamoDBFullAccessを拒否するIAMポリシーを設定する。"
+        },
+        {
+          "letter": "D",
+          "text": "管理アカウントのデフォルトSCPを削除し、すべてのDynamoDBアクションを拒否する単一ステートメントを含む代替SCPを作成する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "107",
+      "text": "CloudOpsエンジニアは、特定のAWSサービスへのアクセスが必要な開発者向けにIAMポリシーを作成する必要があります。要件に基づいて次のポリシーを作成しました。\nこのポリシーで許可されるアクションはどれですか？（2つ選択）",
+      "type": "multiple",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "AWS Storage Gatewayを作成する。"
+        },
+        {
+          "letter": "B",
+          "text": "AWS Lambda関数用のIAMロールを作成する。"
+        },
+        {
+          "letter": "C",
+          "text": "Amazon SQSキューを削除する。"
+        },
+        {
+          "letter": "D",
+          "text": "AWSロードバランサーを記述する。"
+        },
+        {
+          "letter": "E",
+          "text": "AWS Lambda関数を呼び出す。"
+        }
+      ],
+      "correct": [
+        "D",
+        "E"
+      ]
+    },
+    {
+      "id": "108",
+      "text": "開発チームは、Amazon EC2マシンの状態が「terminated」ではないイベントをAmazon EventBridgeで照合したいと考えています。\n関連するイベントを検索するには、どのイベントパターンを使用すべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "{\"detail\": {\"state\": [\"not equals-ignore-case\": \"terminated\"]}}"
+        },
+        {
+          "letter": "B",
+          "text": "{\"detail\": {\"state\": [\"! equals-ignore-case\": \"terminated\"]}}"
+        },
+        {
+          "letter": "C",
+          "text": "{\"detail\": {\"state\": [\"equals-ignore-case\": \"terminated\"]}}"
+        },
+        {
+          "letter": "D",
+          "text": "{\"detail\": {\"state\": [{\"anything-but\": {\"equals-ignore-case\": \"terminated\"}}]}}"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "109",
+      "text": "CloudOpsエンジニアは企業のコスト削減に取り組んでいます。組織内の複数のAWSアカウントとリージョンに、未使用のElastic IPアドレスが複数存在することに気付きました。\nCloudOpsエンジニアは、セキュリティドメインに基づいてアドレスを管理・追跡する必要があります。また、割り当てられたアドレスの履歴を表示できる必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "AWS ConfigでIPアドレス追跡ルールを有効にする。"
+        },
+        {
+          "letter": "B",
+          "text": "Amazon CloudWatchでカスタムIPメトリクスを使用し、アカウントとリージョンごとにアドレスを表示する。"
+        },
+        {
+          "letter": "C",
+          "text": "Amazon VPC IP Address ManagerのOrganizations統合を有効にする。"
+        },
+        {
+          "letter": "D",
+          "text": "AWS Systems Manager Inventoryで、IP追跡用のリソースデータ同期をAmazon S3に対して有効にする。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "110",
+      "text": "企業はSoftware as a Service（SaaS）アプリケーションを使用しています。企業はAWS SDKとIAMユーザーのアクセスキーIDおよびシークレットアクセスキーを使用して、アプリケーションをAWSサービスと統合しています。\n企業はIAMユーザーに最小権限の原則を適用する必要があります。また、永続的な認証情報の使用を避ける必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "AWS STS AssumeRoleWithSAML API操作を使用するようにアプリケーションを移行する。"
+        },
+        {
+          "letter": "B",
+          "text": "AWS STS AssumeRole API操作を使用するようにアプリケーションを移行し、IAMユーザーにはAWS STSの呼び出しのみを許可する。"
+        },
+        {
+          "letter": "C",
+          "text": "既存のIAMユーザーにポリシーを追加し、アプリケーションに必要な権限だけにスコープする。"
+        },
+        {
+          "letter": "D",
+          "text": "IAMグループを追加して、アプリケーションに必要な権限だけにスコープし、そのIAMユーザーをIAMグループに追加する。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "111",
+      "text": "企業はAWS Organizationsの組織内に多数のアカウントを保有しています。企業は、組織の管理アカウントからメンバーアカウントへリソースのプロビジョニングを自動化する必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "AWS CloudFormation変更セットを作成し、すべてのメンバーアカウントにデプロイする。"
+        },
+        {
+          "letter": "B",
+          "text": "AWS CloudFormationネストスタックを作成し、すべてのメンバーアカウントにデプロイする。"
+        },
+        {
+          "letter": "C",
+          "text": "AWS CloudFormation StackSetsを作成し、すべてのメンバーアカウントにデプロイする。"
+        },
+        {
+          "letter": "D",
+          "text": "AWS SAMテンプレートを作成し、すべてのメンバーアカウントにデプロイする。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "112",
+      "text": "企業のVPCはAWS Site-to-Site VPNを介してオンプレミスのデータセンターに接続されています。企業は、VPC内のAmazon EC2インスタンスからexample.comのDNSクエリをデータセンターのDNSサーバーへ送信する必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "Amazon Route 53 Resolverインバウンドエンドポイントを作成し、オンプレミスDNSサーバーに条件付き転送ルールを作成して、example.comのDNSリクエストをインバウンドエンドポイントへ転送する。"
+        },
+        {
+          "letter": "B",
+          "text": "Amazon Route 53 Resolverインバウンドエンドポイントを作成し、Resolverに転送ルールを作成して、example.comのすべてのクエリをオンプレミスDNSサーバーへ送信する。このルールをVPCに関連付ける。"
+        },
+        {
+          "letter": "C",
+          "text": "Amazon Route 53 Resolverアウトバウンドエンドポイントを作成し、オンプレミスDNSサーバーに条件付き転送ルールを作成して、example.comのDNSリクエストをアウトバウンドエンドポイントへ転送する。"
+        },
+        {
+          "letter": "D",
+          "text": "Amazon Route 53 Resolverアウトバウンドエンドポイントを作成し、Resolverに転送ルールを作成して、example.comのすべてのクエリをオンプレミスDNSサーバーへ送信する。このルールをVPCに関連付ける。"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "113",
+      "text": "規制要件への準拠のため、CloudOpsエンジニアはAmazon EC2のAmazon Machine Image（AMI）をAmazon S3バケットへバックアップする必要があります。将来、バケットからAMIを復元した場合、元のAMIと同じAMIイメージIDを使用する必要があります。\nこの要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "AMIのコピーを作成し、保存先S3バケットを指定する。起動権限をimplicitに設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "AMIに関連付けられたスナップショットをアーカイブし、S3バケットをアーカイブ先として指定する。"
+        },
+        {
+          "letter": "C",
+          "text": "ストアイメージタスクを作成し、イメージIDと保存先S3バケットを指定する。"
+        },
+        {
+          "letter": "D",
+          "text": "AWS CLIのcopy-imageコマンドを使用し、イメージIDと保存先S3バケットを指定する。"
+        }
+      ],
+      "correct": [
+        "C"
+      ]
+    },
+    {
+      "id": "114",
+      "text": "CloudOpsエンジニアは、企業のすべてのAmazon S3バケットへのパブリックアクセスをブロックしています。将来、S3バケットがパブリックに読み取り可能になった場合に通知を受け取りたいと考えています。\nこの要件を最も運用効率よく満たす方法はどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "各S3バケットのパブリックアクセス設定を定期的に確認するAWS Lambda関数を作成し、Amazon SNSで通知を送信する。"
+        },
+        {
+          "letter": "B",
+          "text": "S3 APIを使用して各S3バケットのパブリックアクセス設定を確認するcronスクリプトを作成し、Amazon SNSで通知を送信する。"
+        },
+        {
+          "letter": "C",
+          "text": "各S3バケットでS3 Event Notificationsを有効にし、Amazon SNSトピックを購読させる。"
+        },
+        {
+          "letter": "D",
+          "text": "AWS Configでs3-bucket-public-read-prohibitedマネージドルールを有効にし、AWS ConfigルールをAmazon SNSトピックに関連付ける。"
+        }
+      ],
+      "correct": [
+        "D"
+      ]
+    },
+    {
+      "id": "115",
+      "text": "企業はAWS上で3層Webアプリケーションを運用しています。アプリケーションはWebサーバー、アプリケーションサーバー、データベースサーバーで構成されています。アプリケーションサーバーはWebサーバーからのリクエストを処理します。\n企業はアプリケーションの高可用性を確保したいと考えています。そのため、アプリケーションサーバーの状態を監視し、正常なインスタンスにのみトラフィックをルーティングする必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "アプリケーションサーバーの前段にApplication Load Balancer（ALB）を作成し、アプリケーションサーバーに対するヘルスチェックを設定する。"
+        },
+        {
+          "letter": "B",
+          "text": "アプリケーションサーバー用のAmazon Route 53ヘルスチェックを作成し、アプリケーションサーバーの前段にNetwork Load Balancer（NLB）を配置する。"
+        },
+        {
+          "letter": "C",
+          "text": "アプリケーションサーバーを再起動するAWS Lambda関数を作成し、アプリケーションサーバーの状態を監視するAmazon CloudWatchアラームを設定する。アプリケーションが異常な場合に関数を実行する。"
+        },
+        {
+          "letter": "D",
+          "text": "アプリケーションサーバーの状態を監視するAmazon CloudWatchメトリクスを作成し、Network Load Balancer（NLB）を使用してトラフィックをルーティングする。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "116",
+      "text": "企業はEC2 Image Builderパイプラインの一部としてカスタムAmazon Machine Image（AMI）を使用しています。CloudOpsエンジニアは、そのカスタムAMIが数か月以内にサポート終了になることに気付きました。CloudOpsエンジニアは、EC2 Image Builderパイプラインを更新して最新のAMI IDを使用する必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "既存のEC2 Image Builderレシピの新しいバージョンを作成し、AMI IDの詳細を更新する。パイプラインを更新して新しいレシピバージョンを使用する。"
+        },
+        {
+          "letter": "B",
+          "text": "既存AMIのライフサイクルルールでAMIを無効化し、既存のEC2 Image Builderレシピを最新AMI IDに更新して、パイプラインを再実行する。"
+        },
+        {
+          "letter": "C",
+          "text": "ビルドコンポーネントを更新して最新AMI IDの詳細を使用する。"
+        },
+        {
+          "letter": "D",
+          "text": "パイプラインの起動テンプレート内のAMI IDを置き換える。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "117",
+      "text": "企業は複数のAWSリージョンに分散した複数のAmazon EC2インスタンスを運用しています。EC2インスタンスの管理にはAWS Systems Managerツールを使用しています。企業は、ユーザーのログインとユーザーが行ったアクションを記録する監査ソフトウェアパッケージをすべてのインスタンスにデプロイする必要があります。\nCloudOpsエンジニアは、既存のすべてのEC2インスタンスに監査ソフトウェアを自動インストールし、新しく起動したEC2インスタンスにも自動的にインストールされるソリューションを実装する必要があります。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "監査ソフトウェアを含むSystems Manager Distributorパッケージを作成し、パッケージをAmazon S3バケットに保存する。各リージョンでSystems Manager State Managerの関連付けを作成し、企業のAWSアカウント内のすべてのマネージドインスタンスにソフトウェアパッケージをインストールする。"
+        },
+        {
+          "letter": "B",
+          "text": "監査ソフトウェアのインストーラーをAmazon S3バケットに保存する。Systems Manager Fleet Manager Remote Desktopを使用して各インスタンスへ接続し、AWS CLIでインストーラーをダウンロードして手動で実行する。"
+        },
+        {
+          "letter": "C",
+          "text": "ソフトウェアインストーラーを呼び出すAWS Lambda関数を作成し、Lambdaレイヤーを使用して監査ソフトウェアを関数に組み込む。各インスタンスから、スケジュールされたAmazon EventBridgeルールを使用してLambda関数を実行する。"
+        },
+        {
+          "letter": "D",
+          "text": "Amazon EC2 RunInstancesイベントに反応するAmazon EventBridgeルールを作成し、イベントを変更してソフトウェアインストーラーを実行するステップを追加する。すべてのインスタンスを再起動する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "118",
+      "text": "企業はAWS Cloudのコストを管理しています。CloudOpsエンジニアは、リソースに割り当てられた企業独自のタグを請求レポートに表示する必要があります。\nこの要件を満たすには何をすべきですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "タグをAWS生成のコスト配分タグとして有効化する。"
+        },
+        {
+          "letter": "B",
+          "text": "タグをユーザー定義のコスト配分タグとして有効化する。"
+        },
+        {
+          "letter": "C",
+          "text": "新しいコストカテゴリを作成し、アカウントの請求ディメンションを選択する。"
+        },
+        {
+          "letter": "D",
+          "text": "新しいAWS Cost and Usage Reportを作成し、リソースIDを含める。"
+        }
+      ],
+      "correct": [
+        "B"
+      ]
+    },
+    {
+      "id": "119",
+      "text": "企業はAWS Systems Managerを使用してAWSアカウント間のタスクを自動化しています。企業は監視ツールを使用して問題を検出し、問題を修復するためにAWS Lambda関数を実行するSystems Manager Automationランブックを作成しています。\n当初はランブックを手動で実行していましたが、現在は監視ツールが問題を検出したときにランブックを自動実行したいと考えています。\n要件を満たすソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "監視ツールからの検出結果をAmazon EventBridgeへ発行するよう設定し、監視ツールからのイベントに応答してランブックを呼び出すEventBridgeルールを作成する。"
+        },
+        {
+          "letter": "B",
+          "text": "監視ツールからの検出結果をAmazon SNSトピックへ送信するよう設定し、ランブックをSNSトピックに購読させ、メッセージ受信時にランブックを呼び出す。"
+        },
+        {
+          "letter": "C",
+          "text": "監視ツールからの検出結果をAmazon CloudWatch Logsへ書き込むよう設定し、新しいログエントリが検出されたときにランブックを呼び出すCloudWatch Logsサブスクリプションフィルターを作成する。"
+        },
+        {
+          "letter": "D",
+          "text": "AWS Configでリソースを評価し、設定変更をAmazon EventBridgeへ発行するよう設定する。設定変更イベントに応答してランブックを呼び出すルールを作成する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    },
+    {
+      "id": "120",
+      "text": "CloudOpsエンジニアは、パブリックサブネットとプライベートサブネットを含むVPCを作成しました。プライベートサブネットに起動したAmazon EC2インスタンスはインターネットにアクセスできません。デフォルトのネットワークACLがVPC内のすべてのサブネットで有効になっており、すべてのセキュリティグループはすべてのアウトバウンドトラフィックを許可しています。\nプライベートサブネットのEC2インスタンスにインターネットアクセスを提供するソリューションはどれですか？",
+      "type": "single",
+      "choices": [
+        {
+          "letter": "A",
+          "text": "パブリックサブネットにNATゲートウェイを作成し、プライベートサブネットからNATゲートウェイへのルートを作成する。"
+        },
+        {
+          "letter": "B",
+          "text": "パブリックサブネットにNATゲートウェイを作成し、パブリックサブネットからNATゲートウェイへのルートを作成する。"
+        },
+        {
+          "letter": "C",
+          "text": "プライベートサブネットにNATゲートウェイを作成し、パブリックサブネットからNATゲートウェイへのルートを作成する。"
+        },
+        {
+          "letter": "D",
+          "text": "プライベートサブネットにNATゲートウェイを作成し、プライベートサブネットからNATゲートウェイへのルートを作成する。"
+        }
+      ],
+      "correct": [
+        "A"
+      ]
+    }
+  ]
+}
