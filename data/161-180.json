@@ -24,7 +24,7 @@
         }
       ],
       "correct": [
-        "C"
+        "A"
       ]
     },
     {
@@ -55,7 +55,7 @@
       ],
       "correct": [
         "A",
-        "C"
+        "B"
       ]
     },
     {
@@ -107,7 +107,7 @@
         }
       ],
       "correct": [
-        "D"
+        "A"
       ]
     },
     {
@@ -159,7 +159,7 @@
         }
       ],
       "correct": [
-        "C"
+        "B"
       ]
     },
     {
@@ -237,7 +237,7 @@
         }
       ],
       "correct": [
-        "B"
+        "A"
       ]
     },
     {
@@ -289,7 +289,7 @@
         }
       ],
       "correct": [
-        "B"
+        "A"
       ]
     },
     {
@@ -315,7 +315,7 @@
         }
       ],
       "correct": [
-        "B"
+        "A"
       ]
     },
     {
@@ -393,7 +393,7 @@
         }
       ],
       "correct": [
-        "B"
+        "A"
       ]
     },
     {
@@ -419,7 +419,7 @@
         }
       ],
       "correct": [
-        "B"
+        "A"
       ]
     },
     {
@@ -445,7 +445,7 @@
         }
       ],
       "correct": [
-        "B"
+        "A"
       ]
     },
     {
@@ -471,13 +471,13 @@
         }
       ],
       "correct": [
-        "C"
+        "A"
       ]
     },
     {
       "id": "179",
       "text": "企業は、Amazon EC2インスタンスのソフトウェア脆弱性を定期的に検出する必要があります。検出結果には、脆弱性の重大度と推奨される修復方法を含める必要があります。\n最小限の運用オーバーヘッドで要件を満たすソリューションはどれですか？",
-      "type": "multiple",
+      "type": "single",
       "choices": [
         {
           "letter": "A",
@@ -495,19 +495,9 @@
           "letter": "D",
           "text": "CloudWatchエージェントを使用してインストール済みソフトウェアを収集し、手動で脆弱性を評価する。"
         },
-        {
-          "letter": "E",
-          "text": "Configure a CloudWatch alarm to enter ALARM state when the disk_used_percent CloudWatch metric is greater than 80%."
-        },
-        {
-          "letter": "F",
-          "text": "Configure a CloudWatch alarm to enter ALARM state when the disk_used CloudWatch metric is greater than 80% or when the disk_free CloudWatch metric is less than 20%."
-        }
       ],
       "correct": [
-        "A",
-        "C",
-        "E"
+        "A"
       ]
     },
     {
